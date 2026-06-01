@@ -1,1 +1,0 @@
-# 3timesDavid.github.io

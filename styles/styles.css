@@ -1,0 +1,907 @@
+*{border: 0px solid black}
+
+/*ESTILOS GENERALES-------------------------*/
+
+body {
+	--fondo_principal:#fafaf9;
+	--fondo_tarjeta:white;
+	--fondo_etiqueta:#f3f4f6;
+	--fondo_boton:rgb(0, 112, 0);
+	--texto_normal:black;
+	--texto_gris: grey;
+	--texto_verde:green;
+	--texto_boton:white;
+	--barra_horizontal:green;
+	--borde_foto: green;
+	--borde_etiqueta:#e5e7eb;
+	font-family: Arial;
+	background-color: var(--fondo_principal);
+}
+
+.body80{
+	display:flex;
+	justify-content: center;
+	flex-direction: column;
+  max-width: 2560px;
+	width: 70%;
+	margin: 0 auto;
+	gap:100px;
+  font-size: clamp(1em, 1vw, 2rem);
+}
+
+
+ul{
+	margin:0;
+	padding:0;
+}
+
+li{
+	list-style-type: none;
+  display:flex;
+	align-items:center;
+}
+
+h2{
+  font-size: clamp(1rem, 2vw, 8rem);
+}
+
+
+.titulo_seccion{
+	display:flex;
+	align-items:center;
+	gap:16px;
+	height: 50px;
+	margin-bottom:20px;
+}
+
+.linea_horizontal{
+	flex: 1;
+	height: 1px;
+	background-color: var(--barra_horizontal);
+}
+
+
+
+section{
+	gap: 80px 80px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*PANEL NAVEGACION-------------------------*/
+
+nav {
+	background: var(--fondo_principal);
+	border-bottom: 1px solid green;
+	display:flex;
+	align-items: center;
+	color: grey;
+  padding-top: clamp(10px, 1vw, 50px);
+  padding-bottom: clamp(10px, 1vw, 50px);
+	min-height: 30px;
+  max-width: 100%;
+	width: 100%;
+  margin-bottom: 20px;
+}
+
+.nav_nombre{
+	font-size: clamp(0.2rem, 1vw, 2rem);
+	width: 15%;
+	font-weight: bold;
+	text-align: left;
+	margin-left: 2%;
+}
+
+.nav-enlaces {
+	width:55%;
+	display: flex;
+	justify-content: center;
+	padding: 0;
+	gap: clamp(8px, 2vw, 30px);
+  flex-wrap: wrap;
+}
+
+
+.nav-enlaces > li > a {
+	text-decoration: none;
+	color: var(--texto_gris);
+  font-size: clamp(0.3rem, 1vw, 2rem);
+}
+
+.nav-extras {
+	width: 20%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin-right: 20px;
+	gap:20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*NOMBRE, FOTO Y DESCRIPCIÓN-------------------------*/
+
+
+.seccion_grid {
+    display: flex;
+    align-items: flex-start;
+}
+
+.columna_izquierda {
+    width:60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.nombre_grande {
+    display: flex;
+    flex-direction: column;
+}
+
+.nombre {
+    font-weight: bold;
+    font-size: clamp(2.5rem, 8vw, 13rem);
+}
+
+.apellido {
+    font-size: clamp(2.5rem, 8vw, 12rem);
+}
+
+.columna_derecha {
+    width: 40%;
+    display:flex;
+    justify-content:center;
+}
+
+#imagen_perfil {
+    width: 70%;
+    height: auto;
+    border: 2px solid var(--borde_foto);
+    border-radius: 5%;
+}
+
+div + .rol{
+	color: var(--texto_verde);
+	text-align: center;
+	margin-top: 3%;
+  font-size: clamp(1rem, 2vw, 2rem);
+}
+
+.rol{
+	color: var(--texto_verde);
+	text-align: center;
+  margin: 15px 0px 0px 0px;
+  font-size: clamp(1em, 2vw, 2rem);
+}
+
+.descripcion {
+	color:var(--texto_gris);
+	text-align: center;
+	margin-top: 3%;
+  font-size: clamp(1em, 2vw, 2rem);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*EXPERIENCIA LABORAL-------------------------*/
+
+article{
+	height: auto;
+	background: var(--fondo_tarjeta);
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 20px 0px 20px 0px;
+}
+
+
+
+.imqiberica, .sgstecnos, .imqtecnocrea, .aidimme{
+	display:flex;
+  padding-bottom: 5%;
+}
+
+.izquierdo{
+	flex: 1.3;
+}
+
+.central{
+	flex: 3.5;
+}
+
+.derecho{
+	flex: 4;
+  margin-left: 3%;
+}
+
+.empresa{
+	font-size: clamp(2em, 2vw, 4rem);
+	font-weight: bold;
+}
+
+.derecho > ul{
+	margin-top: 40px;
+}
+
+.derecho > ul > li{
+	margin-bottom: 15px;
+	font-size: clamp(1em, 1vw, 2rem);
+}
+
+.etiqueta_container{
+	width: 80%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap:10px;
+	margin: 40px 20px 0px 0px;
+}
+
+.etiqueta{
+	border: 1px solid var(--borde_etiqueta);
+	border-radius: 5px;
+	background-color: var(--fondo_etiqueta);
+	padding: 5px;
+	text-align:center;
+  align-content: center;
+	font-size: clamp(1em, 1vw, 2rem);
+}
+
+
+/*BOTON DESCARGAR CV-------------------------*/
+.boton_descargar_container{
+	display: flex;
+	justify-content: center;
+	margin-top:20px;
+}
+
+
+.imagen_cv {
+	height: 60px;
+	width: auto;
+}
+
+.imagen_descarga {
+	height: 20px;
+	width: auto;
+}
+
+.boton_descargar{
+	color: var(--texto_boton);
+	background-color:var(--fondo_boton);
+	padding: 0px 30px 0px 30px;
+	height: 40px;
+	border-radius: 10px;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	text-align:center;
+	gap: 20px;
+	text-decoration: none;
+	margin-top: 30px;
+}
+
+.boton_descargar:hover{
+	transform: scale(1.05);
+    transition: all 0.2s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*SOBRE MI-------------------------*/
+
+.sobre_mi_p2{
+	margin-bottom: 50px;
+}
+
+.video_container {
+    aspect-ratio: 16 / 9;
+    display: flex;
+    justify-content:center;
+}
+
+.video_container iframe {
+    width: 80%;
+    height: 80%;
+}
+
+
+
+
+
+
+
+
+
+
+/*PROYECTOS-------------------------*/
+
+.tarj_grid{
+	display:flex;
+	margin-top: 30px;
+}
+
+.tarj_columna_izquierda{
+	flex: 50%;
+}
+
+.tarj_columna_derecha{
+	flex: 50%;
+}
+
+.tarjeta_proyectos{
+	height: 93%;
+	width: 85%;
+	background: var(--fondo_tarjeta);
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 0 auto;
+}
+
+.tarj_imagen_container{
+	height: auto;
+}
+
+.tarj_imagen{
+	width: 100%;
+	height: auto;
+	border-radius: 20px;
+}
+
+.tarj_grid_tecnologias{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	gap: 20px;
+	margin-top: 20px;
+}
+
+.tarj_tecnologias{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.tecnologia_imagen1{
+	width: 100%;
+	height: auto;
+}
+
+.tecnologia_imagen2{
+	width: 50%;
+	height: auto;
+	justify-content: center;
+}
+
+.tecnologia_imagen3{
+	width: 100%;
+	height: auto;
+}
+
+.tecnologia_imagen4{
+	width: 90%;
+	height: auto;
+}
+
+.tarjeta_proyectos > p{
+	margin-top: 20px;
+}
+
+
+
+
+
+
+
+/*NORMAS Y TECNOLOGÍAS-------------------------*/
+
+
+.tarjeta_normtec{
+	height: 90%;
+	width: 50%;
+	background: var(--fondo_tarjeta);
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 0 auto;
+}
+
+.tarjeta_normtec > p{
+	font-weight: bold;
+	text-align: center;
+  margin: 0px 0px 15px 0px;
+}
+
+
+.tarjeta_normtec > ul > li {
+	justify-content: center;
+	margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+/*FORMACION-------------------------*/
+
+.tarj_formacion{
+	display:flex;
+	height: auto;
+	width: 99%;
+	background: var(--fondo_tarjeta);
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 0 auto;
+  margin-top:10px;
+  margin-bottom:20px;
+  gap: 10px;
+}
+
+.tarj_formacion > p{
+	align-content: center;
+}
+
+.formacion_fecha{
+	margin-left: 20px;
+	width: 20%;
+}
+
+.formacion_nombre{
+	font-weight: bold;
+}
+
+.formacion_separador, .formacion_grado, .formacion_institucion{
+	color: grey;
+}
+
+
+
+
+
+
+
+
+
+/*CONTACTO-------------------------*/
+
+.contacto_linkedin_div, .contacto_correo_div, .contacto_whatsapp_div {
+	display:flex;
+	align-content: center;
+	margin-bottom: 10px;
+  margin-left: 20%;
+}
+
+.contacto_linkedin_div > a {
+	display:flex;
+	align-content: center;
+	height: 40px;
+	text-decoration: none;
+	color: var(--texto_normal);
+}
+
+.imagen_linkedin, .imagen_gmail, .imagen_whatsapp{
+	height: 25px;
+	width: auto;
+  margin-right: 10px;
+}
+
+.contacto_correo_div > address{
+	font-style: normal;
+}
+
+.contacto_correo_div > address > a{
+	text-decoration: none;
+	color: var(--texto_normal);
+	font-style: normal;
+}
+
+
+
+
+
+
+
+/*FOOTER-------------------------*/
+footer{
+	height: auto;
+	font-weight: bold;
+	border-top:1px solid black;
+	margin-top: 100px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+  padding: 20px 0;
+}
+
+footer > p {
+	padding-right: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+ 
+@media (max-width: 1024px) {
+ 
+	.body80 {
+		width: 85%;
+		gap: 70px;
+	}
+ 
+  nav {
+    min-height: 10px;
+  }
+
+  .nav_nombre{
+    display:none;
+  }
+
+  .nav-enlaces{
+    display:none;
+  }
+
+
+
+
+	/* EXPERIENCIA */
+	.imqiberica, .sgstecnos, .imqtecnocrea, .aidimme {
+		flex-direction: column;
+		gap: 12px;
+	}
+ 
+	.izquierdo, .central, .derecho {
+		flex: unset;
+		width: 100%;
+	}
+ 
+	.derecho > ul {
+		margin-top: 10px;
+	}
+ 
+	.etiqueta_container {
+		width: 100%;
+		margin: 15px 0 0 0;
+	}
+ 
+
+
+
+
+
+
+
+
+	/* PROYECTOS */
+	.tarj_grid {
+		flex-direction: column;
+		gap: 30px;
+	}
+ 
+	.tarjeta_proyectos {
+		width: 90%;
+	}
+ 
+
+
+
+
+
+
+
+
+
+
+
+	/* NORMAS Y TECNOLOGÍAS */
+	.tarjeta_normtec {
+		width: 75%;
+	}
+ 
+
+
+
+
+
+
+
+
+
+
+
+	/* FORMACIÓN */
+	.tarj_formacion {
+		flex-wrap: wrap;
+	}
+ 
+
+
+
+
+
+
+
+
+
+	/* CONTACTO */
+	.contacto_grid {
+		flex-direction: column;
+	}
+ 
+	.contacto_izquierda {
+		width: 100%;
+	}
+ 
+	.contacto_derecha {
+		width: 100%;
+		border-left: none;
+		border-top: 2px solid var(--barra_horizontal);
+		padding-top: 30px;
+		margin-top: 20px;
+	}
+ 
+	.formulario_contenedor {
+		margin-left: 0;
+	}
+ 
+	.correo_nombre_campo,
+	.correo_remitente_campo,
+	.correo_contenido_campo {
+		width: 100%;
+		box-sizing: border-box;
+	}
+ 
+}
+ 
+
+
+
+
+
+
+
+
+
+@media (max-width: 600px) {
+ 
+	.body80 {
+		width: 95%;
+		gap: 50px;
+	}
+ 
+
+
+
+
+
+
+	/* EXPERIENCIA */
+	.empresa {
+		font-size: 1.4rem;
+	}
+ 
+	.derecho > ul > li {
+		font-size: 1rem;
+	}
+ 
+	.etiqueta_container {
+		grid-template-columns: 1fr 1fr;
+	}
+ 
+
+
+
+
+
+
+
+
+
+
+	/* BOTON CV */
+	.boton_descargar {
+		padding: 0 15px;
+		gap: 10px;
+	}
+ 
+	.imagen_cv {
+		height: 40px;
+	}
+ 
+
+
+
+
+
+
+
+
+
+
+	/* PROYECTOS */
+	.tarjeta_proyectos {
+		padding: 15px;
+	}
+ 
+	.tarj_grid_tecnologias {
+		gap: 10px;
+		margin-top: 20px;
+	}
+ 
+
+
+
+
+
+
+
+
+
+
+	/* NORMAS Y TECNOLOGÍAS */
+	.tarjeta_normtec {
+		width: 95%;
+	}
+ 
+	.tarjeta_normtec > p {
+		font-size: 1.2rem;
+	}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+	/* FORMACIÓN */
+	.tarj_formacion {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 4px;
+		padding: 12px 15px;
+	}
+ 
+	.formacion_fecha {
+		width: auto;
+		font-weight: bold;
+		color: var(--texto_verde);
+	}
+ 
+	.formacion_separador {
+		display: none;
+	}
+ 
+	.formacion_nombre,
+	.formacion_grado,
+	.formacion_institucion {
+		font-size: 0.95rem;
+	}
+ 
+
+
+
+
+
+
+
+	/* CONTACTO */
+	.contacto_izquierda > div {
+		height: auto;
+		flex-wrap: wrap;
+		margin-bottom: 10px;
+	}
+ 
+	.imagen_linkedin,
+	.imagen_gmail,
+	.imagen_whatsapp {
+		height: 20px;
+	}
+ 
+
+
+
+
+
+
+
+
+
+
+	/* FOOTER */
+	footer {
+		justify-content: center;
+	}
+ 
+	footer > p {
+		padding-right: 0;
+	}
+ 
+}
