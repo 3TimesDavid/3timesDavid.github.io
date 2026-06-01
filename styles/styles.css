@@ -2,7 +2,7 @@
 
 /*ESTILOS GENERALES-------------------------*/
 
-body {
+/*body {
 	--fondo_principal:#fafaf9;
 	--fondo_tarjeta:white;
 	--fondo_etiqueta:#f3f4f6;
@@ -16,17 +16,38 @@ body {
 	--borde_etiqueta:#e5e7eb;
 	font-family: Arial;
 	background-color: var(--fondo_principal);
+}*/
+
+
+body {
+	--fondo_principal:rgb(6, 21, 40);
+	--fondo_tarjeta:rgb(139, 139, 139);
+	--fondo_etiqueta:rgb(210, 210, 210);
+	--fondo_boton:rgb(0, 112, 0);
+	--texto_dmp: white;
+	--texto_david: white;
+	--texto_apellido: white;
+	--texto_normal:rgb(154, 154, 154);
+	--texto_gris: grey;
+	--texto_verde:rgb(255, 255, 255);
+	--texto_boton:white;
+	--texto_seccion: rgb(255, 255, 255);
+	--barra_horizontal:rgb(0, 255, 0);
+	--borde_foto: green;
+	--borde_etiqueta:#e5e7eb;
+	font-family: Arial;
+	background-color: var(--fondo_principal);
 }
 
 .body80{
 	display:flex;
 	justify-content: center;
 	flex-direction: column;
-  max-width: 2560px;
+  	max-width: 2560px;
 	width: 70%;
 	margin: 0 auto;
 	gap:100px;
-  font-size: clamp(1em, 1vw, 2rem);
+  	font-size: clamp(1em, 1vw, 2rem);
 }
 
 
@@ -37,12 +58,14 @@ ul{
 
 li{
 	list-style-type: none;
-  display:flex;
+  	display:flex;
 	align-items:center;
 }
 
 h2{
-  font-size: clamp(1rem, 2vw, 8rem);
+  	font-size: clamp(1rem, 2vw, 8rem);
+	color: var(--texto_seccion);
+	font-family: "Archivo Black", sans-serif;
 }
 
 
@@ -90,47 +113,50 @@ nav {
 	background: var(--fondo_principal);
 	border-bottom: 1px solid green;
 	display:flex;
+	justify-content: center;
 	align-items: center;
 	color: grey;
-  padding-top: clamp(10px, 1vw, 50px);
-  padding-bottom: clamp(10px, 1vw, 50px);
+  	padding-top: clamp(10px, 1vw, 50px);
+  	padding-bottom: clamp(10px, 1vw, 50px);
 	min-height: 30px;
-  max-width: 100%;
+  	max-width: 100%;
 	width: 100%;
-  margin-bottom: 20px;
+  	margin-bottom: 20px;
 }
 
 .nav_nombre{
-	font-size: clamp(0.2rem, 1vw, 2rem);
-	width: 15%;
+	font-size: clamp(0.5rem, 2vw, 5rem);
+	width: auto;
 	font-weight: bold;
 	text-align: left;
 	margin-left: 2%;
+	color: var(--texto_dmp);
+	font-family: "Bungee Shade", sans-serif;
 }
 
 .nav-enlaces {
-	width:55%;
+	width:80%;
 	display: flex;
 	justify-content: center;
 	padding: 0;
 	gap: clamp(8px, 2vw, 30px);
-  flex-wrap: wrap;
+  	flex-wrap: wrap;
 }
 
 
 .nav-enlaces > li > a {
 	text-decoration: none;
 	color: var(--texto_gris);
-  font-size: clamp(0.3rem, 1vw, 2rem);
+  	font-size: clamp(0.5rem, 2vw, 2rem);
 }
 
 .nav-extras {
-	width: 20%;
+	width: auto;
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
-	margin-right: 20px;
-	gap:20px;
+	gap:10px;
+	font-size: clamp(0.5rem, 2vw, 2rem);
 }
 
 
@@ -174,10 +200,14 @@ nav {
 .nombre {
     font-weight: bold;
     font-size: clamp(2.5rem, 8vw, 13rem);
+	color: var(--texto_david);
+	font-family: "Archivo Black", sans-serif;
 }
 
 .apellido {
-    font-size: clamp(2.5rem, 8vw, 12rem);
+    font-size: clamp(2.5rem, 7vw, 11rem);
+	color: var(--texto_apellido);
+	font-family: "Archivo Black", sans-serif;
 }
 
 .columna_derecha {
@@ -197,21 +227,21 @@ div + .rol{
 	color: var(--texto_verde);
 	text-align: center;
 	margin-top: 3%;
-  font-size: clamp(1rem, 2vw, 2rem);
+  	font-size: clamp(1rem, 2vw, 2rem);
 }
 
 .rol{
 	color: var(--texto_verde);
 	text-align: center;
   margin: 15px 0px 0px 0px;
-  font-size: clamp(1em, 2vw, 2rem);
+  	font-size: clamp(1em, 2vw, 2rem);
 }
 
 .descripcion {
 	color:var(--texto_gris);
 	text-align: center;
 	margin-top: 3%;
-  font-size: clamp(1em, 2vw, 2rem);
+  	font-size: clamp(1em, 2vw, 2rem);
 
 }
 
@@ -239,18 +269,18 @@ div + .rol{
 article{
 	height: auto;
 	background: var(--fondo_tarjeta);
-  border: 1px solid #e5e7eb;
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  margin: 20px 0px 20px 0px;
+  	border: 1px solid #e5e7eb;
+  	border-radius: 20px;
+  	padding: 20px;
+  	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  	margin: 20px 0px 20px 0px;
 }
 
 
 
 .imqiberica, .sgstecnos, .imqtecnocrea, .aidimme{
 	display:flex;
-  padding-bottom: 5%;
+  	padding-bottom: 5%;
 }
 
 .izquierdo{
@@ -350,27 +380,11 @@ article{
 
 
 
-
-
-
-
 /*SOBRE MI-------------------------*/
 
-.sobre_mi_p2{
-	margin-bottom: 50px;
+.seccion_sobremi > p {
+	color: var(--texto_normal);
 }
-
-.video_container {
-    aspect-ratio: 16 / 9;
-    display: flex;
-    justify-content:center;
-}
-
-.video_container iframe {
-    width: 80%;
-    height: 80%;
-}
-
 
 
 
@@ -538,14 +552,13 @@ article{
 .contacto_linkedin_div, .contacto_correo_div, .contacto_whatsapp_div {
 	display:flex;
 	align-content: center;
-	margin-bottom: 10px;
-  margin-left: 20%;
+	margin-bottom: 20px;
+  	margin-left: 20%;
 }
 
 .contacto_linkedin_div > a {
 	display:flex;
 	align-content: center;
-	height: 40px;
 	text-decoration: none;
 	color: var(--texto_normal);
 }
@@ -553,11 +566,12 @@ article{
 .imagen_linkedin, .imagen_gmail, .imagen_whatsapp{
 	height: 25px;
 	width: auto;
-  margin-right: 10px;
+  	margin-right: 10px;
 }
 
 .contacto_correo_div > address{
 	font-style: normal;
+	color: var(--texto_normal);
 }
 
 .contacto_correo_div > address > a{
@@ -567,7 +581,9 @@ article{
 }
 
 
-
+.contacto_whatsapp_div{
+	color: var(--texto_normal);
+}
 
 
 
@@ -623,6 +639,9 @@ footer > p {
     display:none;
   }
 
+  .nav-extras{
+	display: none;
+  }
 
 
 
