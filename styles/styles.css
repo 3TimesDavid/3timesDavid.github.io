@@ -1,24 +1,6 @@
 *{border: 0px solid rgb(255, 255, 255)}
 
 /*ESTILOS GENERALES-------------------------*/
-
-/*body {
-	--fondo_principal:#fafaf9;
-	--fondo_tarjeta:white;
-	--fondo_etiqueta:#f3f4f6;
-	--fondo_boton:rgb(0, 112, 0);
-	--texto_normal:black;
-	--texto_gris: grey;
-	--texto_verde:green;
-	--texto_boton:white;
-	--barra_horizontal:green;
-	--borde_foto: green;
-	--borde_etiqueta:#e5e7eb;
-	font-family: Arial;
-	background-color: var(--fondo_principal);
-}*/
-
-
 body {
 	--fondo_principal:rgba(3, 11, 21, 0.8);
 	--fondo_nav: black;
@@ -232,7 +214,6 @@ nav {
 
 
 .nombre, .apellido {
-
     font-size: clamp(2.5rem, 6vw, 8rem);
 	color: var(--texto_david);
 	font-family: "Bungee Shade", sans-serif;
@@ -255,15 +236,20 @@ nav {
 
 .rol{
 	color: var(--texto_normal);
-	align-items: flex-start;
-	margin-top: 3%;
   	font-size: clamp(1rem, 1vw, 1.5rem);
-	border-left: 5px solid var(--barra_horizontal);
-	padding-left: 10px;
+	margin: 0px 0px 0px 10px;
+	padding: 0px 0px 0px 0px;
 }
 
 
-
+.rol_container {
+	margin-top: 20px;
+	width: 120%;
+	display: flex;
+	flex-direction: column;
+	border-left: 5px solid var(--barra_horizontal);
+	gap: 10px;
+}
 
 
 
@@ -665,16 +651,15 @@ article{
 footer{
 	background-color: var(--fondo_nav);
 	border-top:1px solid var(--borde_nav);
-	margin-top: 100px;
+	margin-top: 30px;
 	display: flex;
 	align-items: center;
 }
 
 footer > p {
-	font-size: clamp(0.5rem, 1.2vw, 5rem);
+	font-size: 1rem;
 	width: 100%;
 	text-align: center;
-	margin-left: 2%;
 	color: var(--texto_dmp);
 	font-family: "Bungee Shade", sans-serif;
 }
@@ -706,6 +691,22 @@ footer > p {
   	nav {
     	display: none;
   	}
+
+
+
+
+
+	/* NOMBRE */
+	.nombre, .apellido {
+		font-size: clamp(1.5rem, 7vw, 9rem);
+	}
+
+
+	.rol_container {
+		margin-top: 20px;
+		width: 160%;
+	}
+
 
 
 	/* EXPERIENCIA */
@@ -761,7 +762,10 @@ footer > p {
 	.tarjeta_normtec {
 		width: 50%;
 	}
- 
+
+ 	.tarjeta_normtec > p {
+		font-size: 1.2rem;
+	}
 
 
 
@@ -791,12 +795,13 @@ footer > p {
 		display: none;
 	}
  
+	.formacion_fecha,
 	.formacion_nombre,
 	.formacion_grado,
 	.formacion_institucion {
 		font-size: 1rem;
 		padding: 0px;
-		margin: 0px 0px 0px 10px;
+		margin: 0px 0px 0px 20px;
 	}
  
 	.formacion_institucion {
@@ -852,19 +857,27 @@ footer > p {
 
 
 @media (max-width: 600px) {
- 
+
 	.body80 {
 		width: 90%;
 		gap: 50px;
 	}
  
 
-	.boton_descargar_container{
-		gap: 0px;
-	}
+
 
 
 	/* NOMBRE */
+	.nombre, .apellido {
+		font-size: clamp(1.5rem, 7vw, 9rem);
+	}
+
+
+	.rol_container {
+		margin-top: 20px;
+		width: 160%;
+	}
+
 
 
 
@@ -894,6 +907,10 @@ footer > p {
 
 
 	/* BOTON CV */
+ 	.boton_descargar_container{
+		gap: 0px;
+	}
+
 	.boton_descargar {
 		scale: 0.8;
 	}
@@ -902,7 +919,7 @@ footer > p {
 		scale: 0.8;
 	}
 
- 
+
 
 
 
@@ -972,12 +989,13 @@ footer > p {
 		display: none;
 	}
  
+	.formacion_fecha,
 	.formacion_nombre,
 	.formacion_grado,
 	.formacion_institucion {
 		font-size: 1rem;
 		padding: 0px;
-		margin: 0px 0px 0px 10px;
+		margin: 0px 0px 0px 15px;
 	}
  
 	.formacion_institucion {
