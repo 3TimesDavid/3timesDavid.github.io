@@ -6,10 +6,12 @@
 	<title>David Martínez Palomares</title>
 	<link rel="stylesheet" href="styles/styles.css">
 	<link rel="stylesheet" href="styles/normalize.css">
-	<script src="styles/modernizr-custom.js"></script>
+	<script src="js/modernizr-custom.js"></script>
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Bitcount+Prop+Double:wght@100..900&family=Bungee+Shade&family=Fredoka:wght@300..700&family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
 </head>
 
 
@@ -35,10 +37,10 @@
 					<option value="es">ES</option>
 				</select>
 
-				<select id="tema">
+				<!--<select id="tema">
 					<option value="claro">Claro</option>
 					<option value="oscuro">Oscuro</option>
-				</select>
+				</select>-->
 
 			</div>
 	</nav>
@@ -47,28 +49,36 @@
 
 
 <!--NOMBRE Y FOTO--------------------->
-	<section>
+	<section class="hero">
 
 	        <div class="seccion_grid">
 
 	            <div class="columna_izquierda">
-	                <div class="nombre_grande">
+						<span class="bienvenida">Bienvenido, soy</span>
 	                    <span class="nombre">David</span>
 	                    <span class="apellido">Martínez</span>
 	                    <span class="apellido">Palomares</span>
-	                </div>
-	                
-	            </div>
+	            		
+						<p class="rol">Analista de laboratorio eléctrico y coordinador de proyectos<br>Estudiante de desarrollo de software</p>
+				</div>
 
 	            <div class="columna_derecha">
 	                <img id="imagen_perfil" src="src/Profile_picture.jpeg">
 	            </div>
 
 	        </div>
-			<p class="rol">Analista de laboratorio eléctrico y coordinador de proyecto</p>
-			<p class="rol">Estudiante de desarrollo de software</p>
 
-	        <p class="descripcion">Más de 9 años de experiencia en laboratorios de seguridad eléctrica y ambientes regulados ISO 17025, ensayando equipamiento eléctrico de acuerdo a normas de seguridad IEC, EN y UNE-EN.<br><br>Actualmente estudiando Desarrollo de Aplicaciones Multiplataforma,<br>con muchas ganas de aplicar mi experiencia en el desarrollo de software.</p>
+			
+			<div class="boton_descargar_container">
+                <a class="boton_descargar" href="https://drive.google.com/file/d/1wkPfKiGOGIiJzOkGDZEbdVCohfIR0Tc5/view?usp=drive_link" target="_blank">
+                	<img src="src/CV_symbol.png" class="imagen_cv">
+                	<span>Descargar CV</span>
+					<img src="src/Download_symbol_white.png" class="imagen_descarga">
+                </a>
+				<a class="boton_proyectos" href="proyectos.html">
+                	<span>Ver proyectos</span>
+                </a>
+            </div>
 
 	</section>
 
@@ -93,7 +103,7 @@
                     </div>
                     <div class="central">
                         <div>
-                            <span><span class="empresa">IMQ Ibérica</span><br>
+                            <span><span class="empresa">IMQ Ibérica</span><br><br>
                         Analista de laboratorio eléctrico y coordinador de proyectos</span>
                         </div>
                         <div class="etiqueta_container">
@@ -124,7 +134,7 @@
                     </div>
                     <div class="central">
                         <div>
-                            <span><span class="empresa">SGS Tecnos</span><br>
+                            <span><span class="empresa">SGS Tecnos</span><br><br>
                         Analista de laboratorio eléctrico</span>
                         </div>
                         <div class="etiqueta_container">
@@ -151,7 +161,7 @@
                     </div>
                     <div class="central">
                         <div>
-                            <span><span class="empresa">IMQ Tecnocrea</span><br>
+                            <span><span class="empresa">IMQ Tecnocrea</span><br><br>
                         Analista de laboratorio eléctrico y coordinador de proyectos</span>
                         </div>
                         <div class="etiqueta_container">
@@ -181,7 +191,7 @@
                     </div>
                     <div class="central">
                         <div>
-                            <span><span class="empresa">AIDIMME</span><br>
+                            <span><span class="empresa">AIDIMME</span><br><br>
                         Técnico de laboratorio eléctrico</span>
                         </div>
                         <div class="etiqueta_container">
@@ -201,19 +211,6 @@
 
             </div>
 
-            <div class="boton_descargar_container">
-            	
-                <a class="boton_descargar" href="https://floridauniversitaria-my.sharepoint.com/:b:/g/personal/damapa01_alumnatflorida_es/IQCBhmGm2IEgSbZebkJtSD1dAV6_v3pAR6TzCTIESltaBuc?e=9btaaX" target="_blank">
-
-                	<img src="src/CV_symbol.png" class="imagen_cv">
-                	
-                	<p>Descargar CV</p>
-					
-					<img src="src/Download_symbol_white.png" class="imagen_descarga">
-
-                </a>
-            </div>
-
         </div>
     </section>
 
@@ -225,11 +222,62 @@
 	            <span class="linea_horizontal"></span>
 	        </div>
 
-			<p>Llevo casi una década trabajando en laboratorios de seguridad eléctrica, ensayando equipos eléctricos para verificar su seguridad.</p>
+			<div class="sobremi_parrafo_contenedor">
+				<div class="sobremi_izquierda">
+					<img src="src/scientist.png" class="imagen_sobremi">
+				</div>
 
-			<p>Empecé como técnico de laboratorio hace 9 años y a día de hoy soy analista de laboratorio y coordinador de proyectos. Esa forma de trabajar ha formado un carácter crítico y pretendo enfocarlo hacia el desarrollo de software.</p>
+				<div class="sobremi_derecha">
+					<p class="texto_sobremi">Hola, me llamo David y soy analista de seguridad eléctrica y coordinador de proyectos con más de 9 años de experiencia en laboratorios acreditados según ISO 17025, ensayando luminarias y equipos eléctricos conforme a normas de seguridad IEC, EN y UNE-EN.</p>
 
-			<p>Actualmente estoy trabajando, estudiando Desarrollo de Aplicaciones Multiplataforma y dispuesto a afrontar muchos retos más.</p>
+					<p class="texto_sobremi">A lo largo de esos años he desarrollando un enfoque crítico ante la resolución de problemas, la interpretación de documentación y la gestión de proyectos de principio a fin.</p>
+				</div>
+			</div>
+
+
+			<div class="sobremi_parrafo_contenedor">
+				<div class="sobremi_izquierda">
+					<img src="src/lab.png" class="imagen_sobremi">
+				</div>
+
+				<div class="sobremi_derecha">
+					<p class="texto_sobremi">También he dado formaciones a compañeros, trato con clientes constantemente y asumo la responsabilidad de los proyectos desde la planificación hasta la entrega.</p>
+
+					<p class="texto_sobremi">Actualmente estoy estudiando un Grado Superior en Desarrollo de Aplicaciones Multiplataforma, aplicando ese enfoque crítico al mundo del software.</p>
+				</div>
+			</div>
+
+
+			<div class="sobremi_parrafo_contenedor">
+				<div class="sobremi_izquierda">
+					<img src="src/house.png" class="imagen_sobremi">
+				</div>
+
+				<div class="sobremi_derecha">
+					<p class="texto_sobremi">Fuera de lo que es el ambiente laboral, soy una persona tranquila y reservada, pero que tiende a liderar los grupos en los que se siente a gusto.</p>
+
+					<p class="texto_sobremi">De cara al futuro busco estabilidad laboral haciendo lo que me gusta.</p>
+				</div>
+			</div>
+
+
+			<div class="sobremi_parrafo_contenedor">
+				<div class="sobremi_izquierda">
+					<img src="src/house.png" class="imagen_sobremi">
+				</div>
+
+				<div class="sobremi_derecha">
+					<p class="texto_sobremi_internacionalmente">Abierto a oportunidades internacionalmente.</p>
+				</div>
+			</div>
+
+
+
+
+
+
+
+
 
     </section>
 
@@ -322,6 +370,7 @@
     						<li>IEC 62262</li>
     						<li>IEC 62471</li>
     						<li>IEC 61347</li>
+							<li>CE marking</li>
     					</ul>
     				</div>
     			</div>
@@ -331,15 +380,15 @@
     				<div class="tarjeta_normtec">
     					<p>TECNOLOGÍAS</p>
     					<ul>
+							<li>Unity</li>
     						<li>C#</li>
     						<li>JavaScript</li>
     						<li>Node.js</li>
     						<li>Express</li>
     						<li>MySQL</li>
-    						<li>Bash</li>
-    						<li>Unity</li>
 							<li>HTML5</li>
 							<li>CSS3</li>
+							<li>Bash scripting</li>
     					</ul>
     				</div>
     			</div>
@@ -408,25 +457,14 @@
 			</div>
 
 			<div class="contacto_correo_div">
-					<img class="imagen_gmail" src="src/Gmail_logo_color.png">
-					<address>Correo electrónico: <a href="mailto:david94contact@gmail.com"> david94contact@gmail.com</a>
-					</address>
+				<img class="imagen_gmail" src="src/Gmail_logo_color.png">
+				<address>Correo electrónico: <a href="mailto:david94contact@gmail.com"> david94contact@gmail.com</a>
+				</address>
 			</div>
 
 			<div class="contacto_whatsapp_div">
 				<img class="imagen_whatsapp" src="src/Whatsapp_logo_green.png">
 				<span>WhatsApp: +34 681 875 058</span>
-			</div>
-
-			<div class="boton_descargar_container">
-				
-				<a class="boton_descargar" href="https://floridauniversitaria-my.sharepoint.com/:b:/g/personal/damapa01_alumnatflorida_es/IQDvgHhjdaWvTbJXCuqZUjE0AZvYD6lV5b5IJBX7iJLlYF0?e=hiTJKr" target="_blank">
-
-					<img src="src/CV_symbol.png" class="imagen_cv">
-					<p>Descargar CV</p>
-					<img src="src/Download_symbol_white.png" class="imagen_descarga">
-
-				</a>
 			</div>
 
     </section>
@@ -435,7 +473,7 @@
 
 
 	<footer>
-		<p>David Martínez Palomares</p>
+		<p>DMP</p>
 	</footer>
 
 </body>

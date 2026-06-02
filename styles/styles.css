@@ -1,4 +1,4 @@
-*{border: 0px solid black}
+*{border: 0px solid rgb(255, 255, 255)}
 
 /*ESTILOS GENERALES-------------------------*/
 
@@ -20,24 +20,48 @@
 
 
 body {
-	--fondo_principal:rgb(6, 21, 40);
-	--fondo_tarjeta:rgb(139, 139, 139);
-	--fondo_etiqueta:rgb(210, 210, 210);
-	--fondo_boton:rgb(0, 112, 0);
-	--texto_dmp: white;
-	--texto_david: white;
-	--texto_apellido: white;
-	--texto_normal:rgb(154, 154, 154);
-	--texto_gris: grey;
-	--texto_verde:rgb(255, 255, 255);
-	--texto_boton:white;
-	--texto_seccion: rgb(255, 255, 255);
+	--fondo_principal:rgba(3, 11, 21, 0.8);
+	--fondo_nav: black;
+	--fondo_tarjeta:rgb(208, 232, 245);
+	--fondo_etiqueta:rgb(226, 238, 244);
+	--fondo_boton:rgb(46, 135, 46);
+	--texto_dmp: rgb(208, 232, 245);
+	--texto_david: rgb(208, 232, 245);
+	--texto_apellido: rgb(208, 232, 245);
+	--texto_normal:rgb(208, 232, 245);
+	--texto_nav: grey;
+	--texto_tarjeta:rgba(3, 11, 21, 0.9);
+	--texto_boton:rgb(208, 232, 245);
+	--texto_seccion: rgb(208, 232, 245);
 	--barra_horizontal:rgb(0, 255, 0);
-	--borde_foto: green;
-	--borde_etiqueta:#e5e7eb;
-	font-family: Arial;
-	background-color: var(--fondo_principal);
+	--borde_foto: rgb(70, 162, 70);
+	--borde_tarjeta: white;
+	--borde_etiqueta:rgba(3, 11, 21, 0.9);
+	--borde_nav:rgb(208, 232, 245);
+	--sombra_tarjeta: black;
+
+	background-image: url('../src/fondo5.jpg');
+    background-position: center;
+	background-size: 50%;
+
+	font-family: "Montserrat", sans-serif;
+	color: var(--texto_normal);
 }
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: var(--fondo_principal);
+    z-index: 0;
+}
+
+
+nav, .body80, section, footer {
+    position: relative;
+    z-index: 1;
+}
+
 
 .body80{
 	display:flex;
@@ -62,10 +86,16 @@ li{
 	align-items:center;
 }
 
+li::before {
+    content: '›';
+    margin-right: 8px;
+    color: black;
+}
+
 h2{
-  	font-size: clamp(1rem, 2vw, 8rem);
+  	font-size: clamp(2rem, 2vw, 8rem);
 	color: var(--texto_seccion);
-	font-family: "Archivo Black", sans-serif;
+	font-family: "Oswald", sans-serif;
 }
 
 
@@ -110,8 +140,9 @@ section{
 /*PANEL NAVEGACION-------------------------*/
 
 nav {
-	background: var(--fondo_principal);
-	border-bottom: 1px solid green;
+	background: var(--fondo_nav);
+	font-family: "Montserrat", sans-serif;
+	border-bottom: 1px solid var(--borde_nav);
 	display:flex;
 	justify-content: center;
 	align-items: center;
@@ -121,13 +152,10 @@ nav {
 	min-height: 30px;
   	max-width: 100%;
 	width: 100%;
-  	margin-bottom: 20px;
 }
 
 .nav_nombre{
-	font-size: clamp(0.5rem, 2vw, 5rem);
-	width: auto;
-	font-weight: bold;
+	font-size: clamp(1rem, 1.2vw, 5rem);
 	text-align: left;
 	margin-left: 2%;
 	color: var(--texto_dmp);
@@ -139,15 +167,15 @@ nav {
 	display: flex;
 	justify-content: center;
 	padding: 0;
-	gap: clamp(8px, 2vw, 30px);
+	gap: clamp(8px, 1vw, 30px);
   	flex-wrap: wrap;
 }
 
 
 .nav-enlaces > li > a {
 	text-decoration: none;
-	color: var(--texto_gris);
-  	font-size: clamp(0.5rem, 2vw, 2rem);
+	color: var(--texto_nav);
+  	font-size: clamp(0.5rem, 1.2vw, 2rem);
 }
 
 .nav-extras {
@@ -180,35 +208,37 @@ nav {
 
 /*NOMBRE, FOTO Y DESCRIPCIÓN-------------------------*/
 
-
+.hero{
+	margin-top:50px
+}
 .seccion_grid {
     display: flex;
     align-items: flex-start;
+	margin-bottom: 40px;
 }
 
 .columna_izquierda {
     width:60%;
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
+
 }
 
-.nombre_grande {
-    display: flex;
-    flex-direction: column;
-}
-
-.nombre {
-    font-weight: bold;
-    font-size: clamp(2.5rem, 8vw, 13rem);
+.bienvenida{
+    font-size: clamp(1rem, 1vw, 2rem);
 	color: var(--texto_david);
-	font-family: "Archivo Black", sans-serif;
+	margin: 0;
 }
 
-.apellido {
-    font-size: clamp(2.5rem, 7vw, 11rem);
-	color: var(--texto_apellido);
-	font-family: "Archivo Black", sans-serif;
+
+.nombre, .apellido {
+
+    font-size: clamp(2.5rem, 6vw, 8rem);
+	color: var(--texto_david);
+	font-family: "Bungee Shade", sans-serif;
+	margin-bottom: 10px;
 }
+
 
 .columna_derecha {
     width: 40%;
@@ -223,27 +253,15 @@ nav {
     border-radius: 5%;
 }
 
-div + .rol{
-	color: var(--texto_verde);
-	text-align: center;
-	margin-top: 3%;
-  	font-size: clamp(1rem, 2vw, 2rem);
-}
-
 .rol{
-	color: var(--texto_verde);
-	text-align: center;
-  margin: 15px 0px 0px 0px;
-  	font-size: clamp(1em, 2vw, 2rem);
-}
-
-.descripcion {
-	color:var(--texto_gris);
-	text-align: center;
+	color: var(--texto_normal);
+	align-items: flex-start;
 	margin-top: 3%;
-  	font-size: clamp(1em, 2vw, 2rem);
-
+  	font-size: clamp(1rem, 1vw, 1.5rem);
+	border-left: 5px solid var(--barra_horizontal);
+	padding-left: 10px;
 }
+
 
 
 
@@ -267,12 +285,13 @@ div + .rol{
 /*EXPERIENCIA LABORAL-------------------------*/
 
 article{
+	color: var(--texto_tarjeta);
 	height: auto;
 	background: var(--fondo_tarjeta);
-  	border: 1px solid #e5e7eb;
+  	border: 1px solid var(--borde_tarjeta);
   	border-radius: 20px;
   	padding: 20px;
-  	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  	box-shadow: 0 2px 8px var(--sombra_tarjeta);
   	margin: 20px 0px 20px 0px;
 }
 
@@ -293,7 +312,7 @@ article{
 
 .derecho{
 	flex: 4;
-  margin-left: 3%;
+  	margin-left: 3%;
 }
 
 .empresa{
@@ -333,7 +352,8 @@ article{
 .boton_descargar_container{
 	display: flex;
 	justify-content: center;
-	margin-top:20px;
+	align-items: center;
+	gap: 40px;
 }
 
 
@@ -359,15 +379,26 @@ article{
 	text-align:center;
 	gap: 20px;
 	text-decoration: none;
-	margin-top: 30px;
+	transition: all 0.2s ease;
 }
 
-.boton_descargar:hover{
+.boton_descargar:hover, .boton_proyectos:hover{
 	transform: scale(1.05);
-    transition: all 0.2s ease;
 }
 
-
+.boton_proyectos{
+	color: var(--texto_boton);
+	background-color:var(--fondo_boton);
+	padding: 0px 30px 0px 30px;
+	height: 40px;
+	border-radius: 10px;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	text-align:center;
+	text-decoration: none;
+	transition: all 0.2s ease;
+}
 
 
 
@@ -382,11 +413,37 @@ article{
 
 /*SOBRE MI-------------------------*/
 
-.seccion_sobremi > p {
-	color: var(--texto_normal);
+.sobremi_parrafo_contenedor {
+	display: flex;
+    align-items: flex-start;
 }
 
+.sobremi_izquierda {
+    width:10%;
+	display: flex;
+	flex-direction: column;
+}
 
+.sobremi_derecha {
+	width:90%;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 30px;
+}
+
+.imagen_sobremi {
+	width: 80%;
+    height: auto;
+}
+
+.texto_sobremi {
+	padding: 0px;
+	margin: 0px 0px 20px 0px;
+}
+
+.texto_sobremi_internacionalmente {
+	margin: 17px 0px 0px 0px;
+}
 
 
 
@@ -397,6 +454,7 @@ article{
 /*PROYECTOS-------------------------*/
 
 .tarj_grid{
+	color: var(--texto_tarjeta);
 	display:flex;
 	margin-top: 30px;
 }
@@ -416,9 +474,16 @@ article{
   border: 1px solid #e5e7eb;
   border-radius: 20px;
   padding: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px var(--sombra_tarjeta);
   margin: 0 auto;
+  transition: all 0.2s ease;
 }
+
+
+.tarjeta_proyectos:hover{
+	transform: scale(1.05);
+}
+
 
 .tarj_imagen_container{
 	height: auto;
@@ -474,6 +539,8 @@ article{
 
 
 
+
+
 /*NORMAS Y TECNOLOGÍAS-------------------------*/
 
 
@@ -481,26 +548,26 @@ article{
 	height: 90%;
 	width: 50%;
 	background: var(--fondo_tarjeta);
-  border: 1px solid #e5e7eb;
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  margin: 0 auto;
+	color: var(--texto_tarjeta);
+  	border: 1px solid #e5e7eb;
+  	border-radius: 20px;
+  	padding: 20px;
+  	box-shadow: 0 2px 8px var(--sombra_tarjeta);
+  	margin: 0 auto;
 }
 
 .tarjeta_normtec > p{
 	font-weight: bold;
 	text-align: center;
-  margin: 0px 0px 15px 0px;
+  	margin: 0px 0px 15px 0px;
 }
 
 
 .tarjeta_normtec > ul > li {
 	justify-content: center;
 	margin-bottom: 5px;
+
 }
-
-
 
 
 
@@ -509,17 +576,18 @@ article{
 /*FORMACION-------------------------*/
 
 .tarj_formacion{
+	color: var(--texto_tarjeta);
 	display:flex;
 	height: auto;
 	width: 99%;
 	background: var(--fondo_tarjeta);
-  border: 1px solid #e5e7eb;
-  border-radius: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  margin: 0 auto;
-  margin-top:10px;
-  margin-bottom:20px;
-  gap: 10px;
+  	border: 1px solid #e5e7eb;
+  	border-radius: 20px;
+  	box-shadow: 0 2px 8px var(--sombra_tarjeta);
+  	margin: 0 auto;
+  	margin-top:10px;
+  	margin-bottom:20px;
+  	gap: 10px;
 }
 
 .tarj_formacion > p{
@@ -536,7 +604,7 @@ article{
 }
 
 .formacion_separador, .formacion_grado, .formacion_institucion{
-	color: grey;
+	color: var(--texto_tarjeta);
 }
 
 
@@ -552,8 +620,13 @@ article{
 .contacto_linkedin_div, .contacto_correo_div, .contacto_whatsapp_div {
 	display:flex;
 	align-content: center;
-	margin-bottom: 20px;
-  	margin-left: 20%;
+	height: 50px;
+	transition: all 0.2s ease;
+}
+
+.contacto_linkedin_div:hover, .contacto_correo_div:hover, .contacto_whatsapp_div:hover{
+	transform: scale(1.05);
+	padding-left: 3%;
 }
 
 .contacto_linkedin_div > a {
@@ -590,19 +663,22 @@ article{
 
 /*FOOTER-------------------------*/
 footer{
-	height: auto;
-	font-weight: bold;
-	border-top:1px solid black;
+	background-color: var(--fondo_nav);
+	border-top:1px solid var(--borde_nav);
 	margin-top: 100px;
 	display: flex;
-	justify-content: flex-end;
 	align-items: center;
-  padding: 20px 0;
 }
 
 footer > p {
-	padding-right: 50px;
+	font-size: clamp(0.5rem, 1.2vw, 5rem);
+	width: 100%;
+	text-align: center;
+	margin-left: 2%;
+	color: var(--texto_dmp);
+	font-family: "Bungee Shade", sans-serif;
 }
+
 
 
 
@@ -627,22 +703,9 @@ footer > p {
 		gap: 70px;
 	}
  
-  nav {
-    min-height: 10px;
-  }
-
-  .nav_nombre{
-    display:none;
-  }
-
-  .nav-enlaces{
-    display:none;
-  }
-
-  .nav-extras{
-	display: none;
-  }
-
+  	nav {
+    	display: none;
+  	}
 
 
 	/* EXPERIENCIA */
@@ -661,7 +724,7 @@ footer > p {
 	}
  
 	.etiqueta_container {
-		width: 100%;
+		width: 90%;
 		margin: 15px 0 0 0;
 	}
  
@@ -696,7 +759,7 @@ footer > p {
 
 	/* NORMAS Y TECNOLOGÍAS */
 	.tarjeta_normtec {
-		width: 75%;
+		width: 50%;
 	}
  
 
@@ -712,7 +775,32 @@ footer > p {
 
 	/* FORMACIÓN */
 	.tarj_formacion {
-		flex-wrap: wrap;
+		width: 90%;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 4px;
+		padding: 12px 15px;
+	}
+ 
+	.formacion_fecha {
+		width: auto;
+		color: var(--texto_tarjeta);
+	}
+ 
+	.formacion_separador {
+		display: none;
+	}
+ 
+	.formacion_nombre,
+	.formacion_grado,
+	.formacion_institucion {
+		font-size: 1rem;
+		padding: 0px;
+		margin: 0px 0px 0px 10px;
+	}
+ 
+	.formacion_institucion {
+		margin-bottom: 10px;
 	}
  
 
@@ -766,11 +854,17 @@ footer > p {
 @media (max-width: 600px) {
  
 	.body80 {
-		width: 95%;
+		width: 90%;
 		gap: 50px;
 	}
  
 
+	.boton_descargar_container{
+		gap: 0px;
+	}
+
+
+	/* NOMBRE */
 
 
 
@@ -801,13 +895,13 @@ footer > p {
 
 	/* BOTON CV */
 	.boton_descargar {
-		padding: 0 15px;
-		gap: 10px;
+		scale: 0.8;
 	}
- 
-	.imagen_cv {
-		height: 40px;
+
+	.boton_proyectos {
+		scale: 0.8;
 	}
+
  
 
 
@@ -841,7 +935,7 @@ footer > p {
 
 	/* NORMAS Y TECNOLOGÍAS */
 	.tarjeta_normtec {
-		width: 95%;
+		width: 50%;
 	}
  
 	.tarjeta_normtec > p {
@@ -862,6 +956,7 @@ footer > p {
 
 	/* FORMACIÓN */
 	.tarj_formacion {
+		width: 90%;
 		flex-direction: column;
 		align-items: flex-start;
 		gap: 4px;
@@ -870,8 +965,7 @@ footer > p {
  
 	.formacion_fecha {
 		width: auto;
-		font-weight: bold;
-		color: var(--texto_verde);
+		color: var(--texto_tarjeta);
 	}
  
 	.formacion_separador {
@@ -881,10 +975,14 @@ footer > p {
 	.formacion_nombre,
 	.formacion_grado,
 	.formacion_institucion {
-		font-size: 0.95rem;
+		font-size: 1rem;
+		padding: 0px;
+		margin: 0px 0px 0px 10px;
 	}
  
-
+	.formacion_institucion {
+		margin-bottom: 10px;
+	}
 
 
 
