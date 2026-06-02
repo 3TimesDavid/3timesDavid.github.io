@@ -17,10 +17,11 @@ body {
 	--texto_seccion: rgb(208, 232, 245);
 	--barra_horizontal:rgb(0, 255, 0);
 	--borde_foto: rgba(0, 230, 118, 0.1);
-	--borde_tarjeta: white;
+	--borde_tarjeta: rgb(46, 135, 46);
 	--borde_etiqueta:rgba(3, 11, 21, 0.9);
 	--borde_nav:rgb(208, 232, 245);
 	--sombra_tarjeta: black;
+	--sombra_imagen: rgb(208, 232, 245, 0.1);
 
 	background-image: url('../src/fondo5.jpg');
     background-position: center;
@@ -86,7 +87,7 @@ h2{
 	align-items:center;
 	gap:16px;
 	height: 50px;
-	margin-bottom:20px;
+	margin-bottom:10px;
 }
 
 .linea_horizontal{
@@ -98,7 +99,7 @@ h2{
 
 
 section{
-	gap: 80px 80px;
+	gap: 50px 50px;
 }
 
 
@@ -232,7 +233,7 @@ nav {
     height: auto;
     border: 1px solid var(--borde_foto);
     border-radius: 5%;
-	box-shadow: rgba(0, 230, 118, 0.1) 0px 0px 100px;
+	box-shadow: var(--sombra_imagen) 0px 0px 50px;
 }
 
 .rol{
@@ -278,7 +279,7 @@ article{
   	border: 1px solid var(--borde_tarjeta);
   	border-radius: 20px;
   	padding: 20px;
-  	box-shadow: 0 2px 8px var(--sombra_tarjeta);
+  	box-shadow: var(--sombra_tarjeta) 0px 0px 10px ;
   	margin: 20px 0px 20px 0px;
 }
 
@@ -330,7 +331,7 @@ article{
 	background-color: var(--fondo_etiqueta);
 	padding: 5px;
 	text-align:center;
-  align-content: center;
+  	align-content: center;
 	font-size: clamp(1em, 1vw, 2rem);
 }
 
@@ -368,7 +369,7 @@ article{
     opacity: 1;
   }
 	40% {
-    transform: translateY(-8px);
+    transform: translateY(-7px);
   }
 	60% {
     transform: translateY(-5px);
@@ -387,7 +388,7 @@ article{
     opacity: 1;
   }
 	40% {
-    transform: translateX(-10px);
+    transform: translateX(-7px);
   }
 	60% {
     transform: translateX(-5px);
@@ -396,6 +397,7 @@ article{
 
 
 .boton_descargar, .boton_proyectos {
+	font-weight: bold;
 	color: var(--texto_boton);
 	background-color:var(--fondo_boton);
 	padding: 0px 15px 0px 15px;
@@ -405,7 +407,7 @@ article{
 	justify-content: center;
 	align-items:center;
 	text-align:center;
-	gap: 20px;
+	gap: 10px;
 	text-decoration: none;
 	transition: all 0.2s ease;
 }
@@ -413,20 +415,6 @@ article{
 .boton_descargar:hover, .boton_proyectos:hover{
 	transform: scale(1.05);
 }
-/*
-.boton_proyectos{
-	color: var(--texto_boton);
-	background-color:var(--fondo_boton);
-	padding: 0px 30px 0px 30px;
-	height: 40px;
-	border-radius: 10px;
-	display:flex;
-	justify-content: center;
-	align-items:center;
-	text-align:center;
-	text-decoration: none;
-	transition: all 0.2s ease;
-}*/
 
 
 
@@ -469,7 +457,7 @@ article{
 }
 
 .texto_sobremi_internacionalmente {
-	margin: 17px 0px 0px 0px;
+	margin: 10px 0px 0px 0px;
 }
 
 
@@ -479,7 +467,6 @@ article{
 
 
 /*PROYECTOS-------------------------*/
-
 .tarj_grid{
 	color: var(--texto_tarjeta);
 	display:flex;
@@ -498,12 +485,12 @@ article{
 	height: 93%;
 	width: 85%;
 	background: var(--fondo_tarjeta);
-  border: 1px solid #e5e7eb;
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 2px 8px var(--sombra_tarjeta);
-  margin: 0 auto;
-  transition: all 0.2s ease;
+  	border-radius: 20px;
+  	padding: 20px;
+  	border: 1px solid var(--borde_tarjeta);
+	box-shadow: var(--sombra_tarjeta) 0px 0px 50px;
+  	margin: 0 auto;
+  	transition: all 0.2s ease;
 }
 
 
@@ -520,6 +507,7 @@ article{
 	width: 100%;
 	height: auto;
 	border-radius: 20px;
+	box-shadow: var(--sombra_tarjeta) 0px 0px 10px;
 }
 
 .tarj_grid_tecnologias{
@@ -556,8 +544,14 @@ article{
 	height: auto;
 }
 
-.tarjeta_proyectos > p{
-	margin-top: 20px;
+.proyecto_titulo {
+	font-weight: bold;
+	font-size: 1.5rem;
+	margin: 20px 0px 0px 0px;
+}
+
+.proyecto_descripcion {
+	margin: 10px 0px 0px 0px;
 }
 
 
@@ -569,18 +563,16 @@ article{
 
 
 /*NORMAS Y TECNOLOGÍAS-------------------------*/
-
-
 .tarjeta_normtec{
 	height: 90%;
 	width: 50%;
 	background: var(--fondo_tarjeta);
 	color: var(--texto_tarjeta);
-  	border: 1px solid #e5e7eb;
   	border-radius: 20px;
   	padding: 20px;
-  	box-shadow: 0 2px 8px var(--sombra_tarjeta);
   	margin: 0 auto;
+	border: 1px solid var(--borde_tarjeta);
+	box-shadow: var(--sombra_tarjeta) 0px 0px 50px;
 }
 
 .tarjeta_normtec > p{
@@ -608,13 +600,13 @@ article{
 	height: auto;
 	width: 99%;
 	background: var(--fondo_tarjeta);
-  	border: 1px solid #e5e7eb;
   	border-radius: 20px;
-  	box-shadow: 0 2px 8px var(--sombra_tarjeta);
   	margin: 0 auto;
   	margin-top:10px;
   	margin-bottom:20px;
   	gap: 10px;
+	border: 1px solid var(--borde_tarjeta);
+	box-shadow: var(--sombra_tarjeta) 0px 0px 50px;
 }
 
 .tarj_formacion > p{
@@ -646,8 +638,10 @@ article{
 
 .contacto_linkedin_div, .contacto_correo_div, .contacto_whatsapp_div {
 	display:flex;
-	align-content: center;
-	height: 50px;
+	justify-content: left;
+	align-items: center;
+	height: 40px;
+	width: 50%;
 	transition: all 0.2s ease;
 }
 
@@ -859,33 +853,11 @@ footer > p {
 
 
 	/* CONTACTO */
-	.contacto_grid {
-		flex-direction: column;
-	}
- 
-	.contacto_izquierda {
-		width: 100%;
-	}
- 
-	.contacto_derecha {
-		width: 100%;
-		border-left: none;
-		border-top: 2px solid var(--barra_horizontal);
-		padding-top: 30px;
-		margin-top: 20px;
-	}
- 
-	.formulario_contenedor {
-		margin-left: 0;
-	}
- 
-	.correo_nombre_campo,
-	.correo_remitente_campo,
-	.correo_contenido_campo {
-		width: 100%;
-		box-sizing: border-box;
-	}
- 
+
+
+
+
+
 }
  
 
@@ -965,12 +937,6 @@ footer > p {
 
 
 
-
-
-
-
-
-
 	/* PROYECTOS */
 	.tarjeta_proyectos {
 		padding: 15px;
@@ -983,6 +949,9 @@ footer > p {
  
 
 
+
+
+	/* SOBRE MI */
 
 
 
@@ -1049,18 +1018,7 @@ footer > p {
 
 
 	/* CONTACTO */
-	.contacto_izquierda > div {
-		height: auto;
-		flex-wrap: wrap;
-		margin-bottom: 10px;
-	}
- 
-	.imagen_linkedin,
-	.imagen_gmail,
-	.imagen_whatsapp {
-		height: 20px;
-	}
- 
+
 
 
 
