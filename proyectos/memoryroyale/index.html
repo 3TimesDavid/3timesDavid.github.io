@@ -14,7 +14,7 @@
   <!-- NAV -->
   <nav>
     <div class="nav_inner">
-      <a href="../index.html" class="nav_back">
+      <a href="../../index.html" class="nav_back">
         <span class="nav_back_arrow">←</span>
       </a>
     </div>
@@ -29,83 +29,8 @@
       <p class="hero_subtitulo"
          data-es="Juego de cartas 2D desarrollado en Unity · C#"
          data-en="2D card game developed in Unity · C#">
-        Juego de cartas 2D desarrollado en Unity · C#
       </p>
     </section>
-
-
-    <!-- UNITY GAME -->
-    <section class="unity_section slide-in">
-
-      <div class="unity_wrapper">
-        <div class="unity_topbar">
-          <span class="unity_topbar_titulo">MemoryRoyale · WebGL Build</span>
-        </div>
-
-        <div class="unity_canvas_container">
-          <div id="unity-container">
-            <canvas id="unity-canvas" tabindex="-1"></canvas>
-            <div id="unity-loading-bar">
-              <div id="unity-logo"></div>
-              <div id="unity-progress-bar-empty">
-                <div id="unity-progress-bar-full"></div>
-              </div>
-            </div>
-            <div id="unity-warning"></div>
-          </div>
-        </div>
-
-        <div id="unity-footer">
-          <div id="unity-build-title">MemoryRoyale</div>
-          <div id="unity-logo-title-footer"></div>
-          <div id="unity-fullscreen-button"></div>
-        </div>
-      </div>
-
-      <!-- INSTRUCCIONES -->
-      <div class="instrucciones_grid">
-        <div class="instruccion_card">
-          <div class="instruccion_titulo"
-               data-es="Click para voltear"
-               data-en="Click to flip">Click para voltear
-          </div>
-          <div class="instruccion_desc"
-               data-es="Haz click sobre una carta para voltearla y descubrir el símbolo."
-               data-en="Click on a card to flip it and reveal the symbol.">
-            Haz click sobre una carta para voltearla y descubrir el símbolo.
-          </div>
-        </div>
-        <div class="instruccion_card">
-          <div class="instruccion_titulo"
-               data-es="Encuentra el par"
-               data-en="Find the pair">Encuentra el par</div>
-          <div class="instruccion_desc"
-               data-es="Memoriza la posición de las cartas para encontrar los pares."
-               data-en="Memorize the card positions to find matching pairs.">
-            Memoriza la posición de las cartas para encontrar los pares.
-          </div>
-        </div>
-        <div class="instruccion_card">
-          <div class="instruccion_titulo"
-               data-es="Jugador contra jugador"
-               data-en="Player against player"></div>
-          <div class="instruccion_desc"
-               data-es="Debilita rivales con el efecto de las cartas."
-               data-en="Defeat rivals with the card effects.">
-          </div>
-        </div>
-        <div class="instruccion_card">
-          <div class="instruccion_titulo"
-               data-es="De 2 a 4 jugadores"
-               data-en="2 to 4 players"></div>
-          <div class="instruccion_desc"
-               data-es="Reta a tus amigos para averiguar quién tiene mejor memoria."
-               data-en="Challenge your friends to find out who has the better memory.">
-          </div>
-        </div>
-      </div>
-    </section>
-
 
     <!-- SOBRE EL PROYECTO -->
     <section class="slide-in">
@@ -119,14 +44,21 @@
         <div class="info_card">
           <div class="info_card_titulo"
                data-es="Descripción"
-               data-en="Description">Descripción</div>
-          <p data-es="Memory Royale es un juego de memoria 2D desarrollado en Unity como Proyecto Final del primer curso del ciclo DAM (Desarrollo de Aplicaciones Multiplataforma)."
-             data-en="Memory Royale is a 2D memory game developed in Unity as the Final Project for the first year of the DAM (Multiplatform Application Development) degree.">
-            Memory Royale es un juego de memoria 2D desarrollado en Unity como Proyecto Final del primer curso del ciclo DAM (Desarrollo de Aplicaciones Multiplataforma).
+               data-en="Description"></div>
+          <p data-es="Memory Royale es un juego de memoria multijugador local (2–4 jugadores, hotseat) desarrollado en Unity con C#."
+             data-en="Memory Royale is a local multiplayer memory game (2–4 players, hotseat) developed in Unity with C#.">
           </p>
-          <p data-es="El jugador debe encontrar todos los pares de cartas en el tablero dentro del menor número de intentos posible, con animaciones fluidas implementadas con DOTween."
-             data-en="The player must find all card pairs on the board in as few attempts as possible, with smooth animations powered by DOTween.">
-            El jugador debe encontrar todos los pares de cartas en el tablero dentro del menor número de intentos posible, con animaciones fluidas implementadas con DOTween.
+          <p data-es="La arquitectura central se basa en una máquina de estados con cuatro fases por turno (inicio, intento, selección y fin), gestionada por la clase GameLogic."
+          data-en="The core architecture is based on a state machine with four phases per turn (start, attempt, selection and end), managed by the GameLogic class.">
+          </p>
+          <p data-es="Las cartas y los paneles de jugador se generan mediante prefabs instanciados dinámicamente en tiempo de ejecución."
+          data-en="Cards and player panels are generated via dynamically instantiated prefabs at runtime.">
+          </p>
+          <p data-es="Se utilizaron corrutinas para sincronizar el retardo entre el volteo de cartas y su ocultación, y para dar tiempo de lectura al narrador en los efectos automáticos."
+          data-en="Coroutines were used to synchronise the delay between card flipping and hiding, and to allow reading time for the narrator during automatic effects.">
+          </p>
+          <p data-es="Las animaciones de volteo se implementaron con DOTween."
+          data-en="Flip animations were implemented with DOTween.">
           </p>
         </div>
 
@@ -149,7 +81,150 @@
       </div>
     </section>
 
-  </div><!-- /body80 -->
+
+    <!-- UNITY GAME -->
+    <section class="unity_section slide-in">
+
+      <div class="unity_wrapper">
+        <div class="unity_topbar">
+          <span class="unity_topbar_titulo"></span>
+          <div id="unity-fullscreen-button"></div>
+        </div>
+
+        <div class="unity_canvas_container">
+          <div id="unity-container">
+            <canvas id="unity-canvas" tabindex="-1"></canvas>
+            <div id="unity-loading-bar">
+              <div id="unity-logo"></div>
+              <div id="unity-progress-bar-empty">
+                <div id="unity-progress-bar-full"></div>
+              </div>
+            </div>
+            <div id="unity-warning"></div>
+          </div>
+        </div>
+
+        <div id="unity-footer">
+          <div id="unity-build-title">MemoryRoyale WebGL Build</div>
+          <div id="unity-logo-title-footer"></div>
+        </div>
+      </div>
+
+      <!-- INSTRUCCIONES -->
+      <div class="instrucciones_grid">
+        <div class="instruccion_card">
+          <div class="instruccion_titulo"
+               data-es="Click para voltear"
+               data-en="Click to flip">Click para voltear
+          </div>
+          <div class="instruccion_desc"
+               data-es="Haz click sobre una carta para voltearla y descubrir el símbolo."
+               data-en="Click on a card to flip it and reveal the symbol.">
+          </div>
+        </div>
+        <div class="instruccion_card">
+          <div class="instruccion_titulo"
+               data-es="Encuentra el par"
+               data-en="Find the pair">Encuentra el par</div>
+          <div class="instruccion_desc"
+               data-es="Memoriza la posición de las cartas para encontrar los pares."
+               data-en="Memorize the card positions to find matching pairs.">
+          </div>
+        </div>
+        <div class="instruccion_card">
+          <div class="instruccion_titulo"
+               data-es="Jugador contra jugador (2 - 4)"
+               data-en="Player against player (2 - 4)"></div>
+          <div class="instruccion_desc"
+               data-es="Debilita rivales con el efecto de las cartas."
+               data-en="Defeat rivals with the card effects.">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <div class="titulo_seccion">
+      <h2 data-es="Efectos de cartas" data-en="Card effects">Efectos de cartas</h2>
+      <div class="linea_horizontal"></div>
+    </div>
+  
+    <div class="efectos_tabla_card">
+  
+      <!-- Fila cabecera -->
+      <div class="efectos_fila efectos_fila--header">
+        <div data-es="Carta" data-en="Card">Carta</div>
+        <div data-es="Efecto" data-en="Effect">Efecto</div>
+        <div data-es="Tipo" data-en="Type">Tipo</div>
+        <div data-es="Descripción" data-en="Description">Descripción</div>
+      </div>
+  
+      <!-- 2–10 -->
+      <div class="efectos_fila">
+        <div><span class="ef_valor ef_valor--num">2–10</span></div>
+        <div class="ef_nombre" data-es="Daño directo" data-en="Direct damage">Daño directo</div>
+        <div><span class="ef_badge ef_badge--target" data-es="Elige objetivo" data-en="Choose target">Elige objetivo</span></div>
+        <div class="ef_desc"
+            data-es="Resta tantos PS al rival elegido como valor tenga la carta."
+            data-en="Deals damage equal to the card's value to the chosen rival.">
+          Resta tantos PS al rival elegido como valor tenga la carta.
+        </div>
+      </div>
+  
+      <!-- J -->
+      <div class="efectos_fila">
+        <div><span class="ef_valor ef_valor--special">J</span></div>
+        <div class="ef_nombre" data-es="Robo de vida" data-en="Life steal">Robo de vida</div>
+        <div><span class="ef_badge ef_badge--auto" data-es="Automático" data-en="Automatic">Automático</span></div>
+        <div class="ef_desc"
+            data-es="Recuperas 2 PS. Todos los rivales reciben 2 PS de daño."
+            data-en="You recover 2 HP. All rivals take 2 HP of damage.">
+          Recuperas <strong>2 PS</strong>. Todos los rivales reciben <strong>2 PS</strong> de daño.
+        </div>
+      </div>
+  
+      <!-- Q -->
+      <div class="efectos_fila">
+        <div><span class="ef_valor ef_valor--special">Q</span></div>
+        <div class="ef_nombre" data-es="Daño en área" data-en="Area damage">Daño en área</div>
+        <div><span class="ef_badge ef_badge--auto" data-es="Automático" data-en="Automatic">Automático</span></div>
+        <div class="ef_desc"
+            data-es="Todos los rivales reciben 5 PS de daño. Tú no recibes daño."
+            data-en="All rivals take 5 HP of damage. You take no damage.">
+          Todos los rivales reciben <strong>5 PS</strong> de daño. Tú no recibes daño.
+        </div>
+      </div>
+  
+      <!-- K -->
+      <div class="efectos_fila">
+        <div><span class="ef_valor ef_valor--special">K</span></div>
+        <div class="ef_nombre" data-es="Escudo" data-en="Shield">Escudo</div>
+        <div><span class="ef_badge ef_badge--auto" data-es="Automático" data-en="Automatic">Automático</span></div>
+        <div class="ef_desc"
+            data-es="Obtienes un escudo que bloquea el siguiente daño recibido. Máximo 3 escudos."
+            data-en="You gain a shield that blocks the next incoming damage. Up to 3 shields.">
+          Obtienes un escudo que bloquea el siguiente daño recibido. Máximo <strong>3 escudos</strong>.
+        </div>
+      </div>
+  
+      <!-- A -->
+      <div class="efectos_fila efectos_fila--last">
+        <div><span class="ef_valor ef_valor--special">A</span></div>
+        <div class="ef_nombre" data-es="Curación" data-en="Heal">Curación</div>
+        <div><span class="ef_badge ef_badge--auto" data-es="Automático" data-en="Automatic">Automático</span></div>
+        <div class="ef_desc"
+            data-es="Recuperas 5 PS. Sin límite de PS máximos."
+            data-en="You recover 5 HP. No maximum HP cap.">
+          Recuperas <strong>5 PS</strong>. Sin límite de PS máximos.
+        </div>
+      </div>
+  
+    </div>
+
+
+
+  </div>
 
   <footer>
     <p>DMP</p>

@@ -40,8 +40,7 @@ li { list-style-type: none; display: flex; align-items: center; }
 
 nav {
   width: 100%;
-  padding: clamp(10px, 1vw, 20px) 0;
-  border-bottom: 1px solid rgba(208, 232, 245, 0.1);
+  padding: clamp(10px, 1vw, 20px);
 }
 
 .nav_inner {
@@ -150,6 +149,102 @@ h2 {
   to { opacity: 1; transform: translateY(0); }
 }
 
+.efectos_tabla_card {
+  background: var(--fondo_tarjeta);
+  border: 1px solid var(--borde_tarjeta);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--sombra_tarjeta) 0px 0px 30px;
+  color: var(--texto_tarjeta);
+}
+ 
+.efectos_fila {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr 2.5fr;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 24px;
+  border-bottom: 1px solid rgba(3, 11, 21, 0.1);
+}
+ 
+.efectos_fila--last {
+  border-bottom: none;
+}
+ 
+.efectos_fila--header {
+  background: rgba(3, 11, 21, 0.07);
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(0.8rem, 0.85vw, 1rem);
+  font-weight: 600;
+  color: rgba(3, 11, 21, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 10px 24px;
+}
+ 
+.ef_valor {
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 4px 10px;
+  display: inline-block;
+  text-align: center;
+  min-width: 44px;
+}
+ 
+.ef_valor--num {
+  background: rgba(208, 232, 245, 0.5);
+  border: 1px solid rgba(3, 11, 21, 0.2);
+  color: rgba(3, 11, 21, 0.85);
+}
+ 
+.ef_valor--special {
+  background: rgba(208, 232, 245, 0.5);
+  border: 1px solid rgba(3, 11, 21, 0.2);
+  color: rgba(3, 11, 21, 0.85);
+}
+ 
+.ef_nombre {
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(0.9rem, 1vw, 1.1rem);
+  font-weight: 600;
+  color: rgba(3, 11, 21, 0.9);
+}
+ 
+.ef_badge {
+  font-size: clamp(0.65rem, 0.7vw, 0.8rem);
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+ 
+.ef_badge--auto {
+  background: rgba(46, 135, 46, 0.15);
+  border: 1px solid rgba(46, 135, 46, 0.4);
+  color: rgba(3, 11, 21, 0.75);
+}
+ 
+.ef_badge--target {
+  background: rgba(200, 180, 60, 0.15);
+  border: 1px solid rgba(150, 130, 30, 0.4);
+  color: rgba(3, 11, 21, 0.75);
+}
+ 
+.ef_desc {
+  font-size: clamp(0.78rem, 0.82vw, 0.95rem);
+  line-height: 1.55;
+  color: rgba(3, 11, 21, 0.75);
+}
+ 
+.ef_desc strong {
+  color: rgba(3, 11, 21, 0.95);
+}
+ 
+
+
+
 
 /* ============================================================
    CANVAS UNITY
@@ -187,6 +282,19 @@ h2 {
   color: rgba(208, 232, 245, 0.4);
   font-family: monospace;
 }
+
+#unity-fullscreen-button {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  background: url('TemplateData/fullscreen-button.png') no-repeat center;
+  background-size: contain;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+#unity-fullscreen-button:hover {
+  opacity: 1;}
 
 .unity_canvas_container {
   position: relative;
@@ -275,16 +383,7 @@ h2 {
   margin-right: auto;
 }
 
-#unity-fullscreen-button {
-  cursor: pointer;
-  width: 32px;
-  height: 32px;
-  background: url('TemplateData/fullscreen-button.png') no-repeat center;
-  background-size: contain;
-  opacity: 0.6;
-  transition: opacity 0.2s;
-}
-#unity-fullscreen-button:hover { opacity: 1; }
+
 
 
 /* ============================================================
@@ -309,7 +408,6 @@ h2 {
   gap: 8px;
 }
 
-.instruccion_icono { font-size: 1.6rem; }
 
 .instruccion_titulo {
   font-weight: 600;
@@ -329,8 +427,9 @@ h2 {
 
 .info_grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 30px;
+  margin-bottom: 30px;
 }
 
 .info_card {
@@ -430,9 +529,38 @@ footer > p {
 }
 
 @media (max-width: 600px) {
-  .body80 { width: 90%; gap: 50px; }
+  .body80 { 
+    width: 90%;
+  }
+
+  
+  .hero {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
   .nav_inner { width: 90%; }
   .nav_titulo { display: none; }
   .info_grid { grid-template-columns: 1fr; }
   .instrucciones_grid { grid-template-columns: 1fr 1fr; }
+
+  .efectos_fila {
+    grid-template-columns: 50px 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 8px;
+    padding: 12px 16px;
+  }
+ 
+  .efectos_fila > .ef_desc {
+    grid-column: 1 / -1;
+  }
+ 
+  .efectos_fila--header > div:last-child {
+    display: none;
+  }
+}
+
+
 }
