@@ -339,6 +339,7 @@ nav {
 }
 
 
+
 .boton_descargar, .boton_proyectos {
 	font-weight: bold;
 	color: var(--texto_boton);
@@ -513,7 +514,7 @@ article{
 }
 
 .tarjeta_proyectos{
-	height: 93%;
+	height: 95%;
 	width: 85%;
 	background: var(--fondo_tarjeta);
   	border-radius: 20px;
@@ -521,13 +522,17 @@ article{
   	border: 1px solid var(--borde_tarjeta);
 	box-shadow: var(--sombra_tarjeta) 0px 0px 50px;
   	margin: 0 auto;
-  	transition: all 0.2s ease;
 }
 
 
-.tarjeta_proyectos:hover{
+
+
+
+.tarj_imagen:hover{
 	transform: scale(1.05);
 }
+
+
 
 
 .tarj_imagen_container{
@@ -539,7 +544,24 @@ article{
 	height: auto;
 	border-radius: 20px;
 	box-shadow: var(--sombra_tarjeta) 0px 0px 10px;
+	transition: all 0.2s ease;
+	animation: llamarAtencion 2s ease-in-out 1s infinite;
 }
+
+
+@keyframes llamarAtencion {
+	0%, 30%, 50%, 80%, 100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+	30% {
+    transform: scale(1.01);
+  }
+	60% {
+    transform: scale(1);
+  }
+}
+
 
 .tarj_grid_tecnologias{
 	display: grid;
@@ -739,6 +761,9 @@ footer > p {
 		gap: 70px;
 	}
 
+	.hero{
+		margin-top:30px
+	}
 
     #boton_idioma {
         padding: 5px 10px;
@@ -910,7 +935,9 @@ footer > p {
 		gap: 50px;
 	}
  
-
+	.hero{
+		margin-top:20px
+	}
 
 
 

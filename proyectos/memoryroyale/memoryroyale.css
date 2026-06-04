@@ -1,0 +1,438 @@
+/* ============================================================
+   MEMORY ROYALE — Subpágina
+   Hereda variables de color del sistema de diseño principal
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  --fondo_principal: rgba(3, 11, 21, 1);
+  --fondo_tarjeta: rgb(208, 232, 245);
+  --fondo_etiqueta: rgb(226, 238, 244);
+  --fondo_boton: rgb(46, 135, 46);
+  --texto_normal: rgb(208, 232, 245);
+  --texto_tarjeta: rgba(3, 11, 21, 0.9);
+  --texto_boton: rgb(208, 232, 245);
+  --texto_seccion: rgb(208, 232, 245);
+  --barra_horizontal: rgb(0, 255, 0);
+  --borde_tarjeta: rgb(46, 135, 46);
+  --borde_etiqueta: rgba(3, 11, 21, 0.9);
+  --borde_nav: rgb(208, 232, 245);
+  --sombra_tarjeta: rgb(0, 0, 0);
+
+  font-family: "Montserrat", sans-serif;
+  color: var(--texto_normal);
+  background: var(--fondo_principal);
+  min-height: 100vh;
+}
+
+ul { margin: 0; padding: 0; }
+li { list-style-type: none; display: flex; align-items: center; }
+
+
+/* ============================================================
+   NAV
+   ============================================================ */
+
+nav {
+  width: 100%;
+  padding: clamp(10px, 1vw, 20px) 0;
+  border-bottom: 1px solid rgba(208, 232, 245, 0.1);
+}
+
+.nav_inner {
+  width: 70%;
+  max-width: 2560px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav_back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--texto_normal);
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  opacity: 0.7;
+  transition: opacity 0.2s ease, gap 0.2s ease;
+}
+.nav_back:hover { opacity: 1; gap: 12px; }
+.nav_back_arrow { font-size: 1.2em; }
+
+.nav_titulo {
+  font-family: "Bungee Shade", sans-serif;
+  font-size: clamp(0.9rem, 1.2vw, 1.4rem);
+  color: var(--texto_normal);
+}
+
+
+/* ============================================================
+   WRAPPER
+   ============================================================ */
+
+.body80 {
+  display: flex;
+  flex-direction: column;
+  max-width: 2560px;
+  width: 70%;
+  margin: 0 auto;
+  padding-bottom: 100px;
+}
+
+
+/* ============================================================
+   TÍTULOS DE SECCIÓN
+   ============================================================ */
+
+.titulo_seccion {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.linea_horizontal {
+  flex: 1;
+  height: 1px;
+  background-color: var(--barra_horizontal);
+}
+
+h2 {
+  font-size: clamp(2rem, 2vw, 8rem);
+  color: var(--texto_seccion);
+  font-family: "Oswald", sans-serif;
+  white-space: nowrap;
+}
+
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+.hero_titulo {
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(3rem, 6vw, 8rem);
+  color: var(--texto_normal);
+  line-height: 1;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.5s ease-out 0.1s forwards;
+}
+
+.hero_subtitulo {
+  font-size: clamp(1rem, 1.2vw, 1.4rem);
+  color: rgba(208, 232, 245, 0.6);
+  border-left: 5px solid var(--barra_horizontal);
+  padding-left: 16px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.5s ease-out 0.3s forwards;
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ============================================================
+   CANVAS UNITY
+   ============================================================ */
+
+.unity_section { 
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 80px;
+}
+
+.unity_wrapper {
+  background: var(--fondo_tarjeta);
+  border: 1px solid var(--borde_tarjeta);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--sombra_tarjeta) 0px 0px 50px;
+  position: relative;
+}
+
+.unity_topbar {
+  background: rgba(3, 11, 21, 0.95);
+  border-bottom: 1px solid rgba(0, 255, 0, 0.2);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.unity_topbar_titulo {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: rgba(208, 232, 245, 0.4);
+  font-family: monospace;
+}
+
+.unity_canvas_container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  background: #231F20;
+}
+
+#unity-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#unity-canvas {
+  width: 100% !important;
+  height: 100% !important;
+  background: #231F20;
+  display: block;
+}
+
+#unity-loading-bar {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  text-align: center;
+}
+
+#unity-logo {
+  width: 154px;
+  height: 130px;
+  background: url('TemplateData/unity-logo-dark.png') no-repeat center;
+  background-size: contain;
+  margin: 0 auto;
+}
+
+#unity-progress-bar-empty {
+  width: 141px;
+  height: 18px;
+  margin-top: 10px;
+  margin-left: 6.5px;
+  background: url('TemplateData/progress-bar-empty-dark.png') no-repeat center;
+}
+
+#unity-progress-bar-full {
+  width: 0%;
+  height: 18px;
+  background: url('TemplateData/progress-bar-full-dark.png') no-repeat center;
+}
+
+#unity-warning {
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  transform: translate(-50%);
+  background: white;
+  padding: 10px;
+  display: none;
+  z-index: 10;
+}
+
+#unity-footer {
+  background: rgba(3, 11, 21, 0.9);
+  border-top: 1px solid rgba(0, 255, 0, 0.15);
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+#unity-logo-title-footer {
+  width: 102px;
+  height: 38px;
+  background: url('TemplateData/unity-logo-title-footer.png') no-repeat center;
+  background-size: contain;
+}
+
+#unity-build-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  color: rgba(208, 232, 245, 0.5);
+  margin-right: auto;
+}
+
+#unity-fullscreen-button {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  background: url('TemplateData/fullscreen-button.png') no-repeat center;
+  background-size: contain;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+#unity-fullscreen-button:hover { opacity: 1; }
+
+
+/* ============================================================
+   INSTRUCCIONES
+   ============================================================ */
+
+.instrucciones_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.instruccion_card {
+  background: var(--fondo_tarjeta);
+  border: 1px solid var(--borde_tarjeta);
+  border-radius: 14px;
+  padding: 18px;
+  color: var(--texto_tarjeta);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.instruccion_icono { font-size: 1.6rem; }
+
+.instruccion_titulo {
+  font-weight: 600;
+  font-size: clamp(0.85rem, 0.9vw, 1rem);
+}
+
+.instruccion_desc {
+  font-size: clamp(0.75rem, 0.75vw, 0.9rem);
+  opacity: 0.75;
+  line-height: 1.5;
+}
+
+
+/* ============================================================
+   INFO DEL PROYECTO
+   ============================================================ */
+
+.info_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.info_card {
+  background: var(--fondo_tarjeta);
+  border: 1px solid var(--borde_tarjeta);
+  border-radius: 20px;
+  padding: 28px;
+  color: var(--texto_tarjeta);
+  box-shadow: var(--sombra_tarjeta) 0px 0px 30px;
+}
+
+.info_card_titulo {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  border-bottom: 2px solid rgba(46, 135, 46, 0.4);
+  padding-bottom: 10px;
+}
+
+.info_card p {
+  font-size: clamp(0.85rem, 0.9vw, 1rem);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.info_card p:last-child { margin-bottom: 0; }
+
+
+/* ============================================================
+   ETIQUETAS TECH
+   ============================================================ */
+
+.tech_grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.etiqueta {
+  border: 1px solid var(--borde_etiqueta);
+  border-radius: 6px;
+  background-color: var(--fondo_etiqueta);
+  padding: 6px 14px;
+  font-size: clamp(0.7rem, 0.7vw, 0.85rem);
+  color: var(--texto_tarjeta);
+  font-weight: 600;
+}
+
+
+
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+footer {
+  border-top: 1px solid var(--borde_nav);
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+footer > p {
+  font-size: 1rem;
+  width: 100%;
+  text-align: center;
+  color: var(--texto_normal);
+  font-family: "Bungee Shade", sans-serif;
+  padding: 16px 0;
+}
+
+
+/* ============================================================
+   ANIMACIONES DE ENTRADA (scroll)
+   ============================================================ */
+
+.slide-in {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.slide-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .body80 { width: 85%; }
+  .nav_inner { width: 85%; }
+}
+
+@media (max-width: 600px) {
+  .body80 { width: 90%; gap: 50px; }
+  .nav_inner { width: 90%; }
+  .nav_titulo { display: none; }
+  .info_grid { grid-template-columns: 1fr; }
+  .instrucciones_grid { grid-template-columns: 1fr 1fr; }
+}

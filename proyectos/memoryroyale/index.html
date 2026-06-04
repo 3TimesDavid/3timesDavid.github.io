@@ -1,133 +1,225 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | MemoryRoyale</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-  </head>
-  <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Royale | David Martínez</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Oswald:wght@500;700&family=Bungee+Shade&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="memoryroyale.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav_inner">
+      <a href="../index.html" class="nav_back">
+        <span class="nav_back_arrow">←</span>
+      </a>
+    </div>
+  </nav>
+
+  <div class="body80">
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1 class="hero_titulo">Memory Royale</h1>
+      <span data-es="2024–2025" data-en="2024–2025">2024–2025</span>
+      <p class="hero_subtitulo"
+         data-es="Juego de cartas 2D desarrollado en Unity · C#"
+         data-en="2D card game developed in Unity · C#">
+        Juego de cartas 2D desarrollado en Unity · C#
+      </p>
+    </section>
+
+
+    <!-- UNITY GAME -->
+    <section class="unity_section slide-in">
+
+      <div class="unity_wrapper">
+        <div class="unity_topbar">
+          <span class="unity_topbar_titulo">MemoryRoyale · WebGL Build</span>
+        </div>
+
+        <div class="unity_canvas_container">
+          <div id="unity-container">
+            <canvas id="unity-canvas" tabindex="-1"></canvas>
+            <div id="unity-loading-bar">
+              <div id="unity-logo"></div>
+              <div id="unity-progress-bar-empty">
+                <div id="unity-progress-bar-full"></div>
+              </div>
+            </div>
+            <div id="unity-warning"></div>
+          </div>
+        </div>
+
+        <div id="unity-footer">
+          <div id="unity-build-title">MemoryRoyale</div>
+          <div id="unity-logo-title-footer"></div>
+          <div id="unity-fullscreen-button"></div>
         </div>
       </div>
-      <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-logo-title-footer"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">MemoryRoyale</div>
+
+      <!-- INSTRUCCIONES -->
+      <div class="instrucciones_grid">
+        <div class="instruccion_card">
+          <div class="instruccion_titulo"
+               data-es="Click para voltear"
+               data-en="Click to flip">Click para voltear
+          </div>
+          <div class="instruccion_desc"
+               data-es="Haz click sobre una carta para voltearla y descubrir el símbolo."
+               data-en="Click on a card to flip it and reveal the symbol.">
+            Haz click sobre una carta para voltearla y descubrir el símbolo.
+          </div>
+        </div>
+        <div class="instruccion_card">
+          <div class="instruccion_titulo"
+               data-es="Encuentra el par"
+               data-en="Find the pair">Encuentra el par</div>
+          <div class="instruccion_desc"
+               data-es="Memoriza la posición de las cartas para encontrar los pares."
+               data-en="Memorize the card positions to find matching pairs.">
+            Memoriza la posición de las cartas para encontrar los pares.
+          </div>
+        </div>
+        <div class="instruccion_card">
+          <div class="instruccion_titulo"
+               data-es="Jugador contra jugador"
+               data-en="Player against player"></div>
+          <div class="instruccion_desc"
+               data-es="Debilita rivales con el efecto de las cartas."
+               data-en="Defeat rivals with the card effects.">
+          </div>
+        </div>
+        <div class="instruccion_card">
+          <div class="instruccion_titulo"
+               data-es="De 2 a 4 jugadores"
+               data-en="2 to 4 players"></div>
+          <div class="instruccion_desc"
+               data-es="Reta a tus amigos para averiguar quién tiene mejor memoria."
+               data-en="Challenge your friends to find out who has the better memory.">
+          </div>
+        </div>
       </div>
-    </div>
-    <script>
-      var canvas = document.querySelector("#unity-canvas");
+    </section>
 
-      // Shows a temporary message banner/ribbon for a few seconds, or
-      // a permanent error message on top of the canvas if type=='error'.
-      // If type=='warning', a yellow highlight color is used.
-      // Modify or remove this function to customize the visually presented
-      // way that non-critical warnings and error messages are presented to the
-      // user.
-      function unityShowBanner(msg, type) {
-        var warningBanner = document.querySelector("#unity-warning");
-        function updateBannerVisibility() {
-          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
-        }
-        var div = document.createElement('div');
-        div.innerHTML = msg;
-        warningBanner.appendChild(div);
-        if (type == 'error') div.style = 'background: red; padding: 10px;';
-        else {
-          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-          setTimeout(function() {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
-          }, 5000);
-        }
-        updateBannerVisibility();
+
+    <!-- SOBRE EL PROYECTO -->
+    <section class="slide-in">
+      <div class="titulo_seccion">
+        <h2 data-es="Sobre el proyecto" data-en="About the project">Sobre el proyecto</h2>
+        <div class="linea_horizontal"></div>
+      </div>
+
+      <div class="info_grid">
+
+        <div class="info_card">
+          <div class="info_card_titulo"
+               data-es="Descripción"
+               data-en="Description">Descripción</div>
+          <p data-es="Memory Royale es un juego de memoria 2D desarrollado en Unity como Proyecto Final del primer curso del ciclo DAM (Desarrollo de Aplicaciones Multiplataforma)."
+             data-en="Memory Royale is a 2D memory game developed in Unity as the Final Project for the first year of the DAM (Multiplatform Application Development) degree.">
+            Memory Royale es un juego de memoria 2D desarrollado en Unity como Proyecto Final del primer curso del ciclo DAM (Desarrollo de Aplicaciones Multiplataforma).
+          </p>
+          <p data-es="El jugador debe encontrar todos los pares de cartas en el tablero dentro del menor número de intentos posible, con animaciones fluidas implementadas con DOTween."
+             data-en="The player must find all card pairs on the board in as few attempts as possible, with smooth animations powered by DOTween.">
+            El jugador debe encontrar todos los pares de cartas en el tablero dentro del menor número de intentos posible, con animaciones fluidas implementadas con DOTween.
+          </p>
+        </div>
+
+        <div class="info_card">
+          <div class="info_card_titulo"
+               data-es="Tecnologías"
+               data-en="Technologies">Tecnologías</div>
+          <div class="tech_grid">
+            <span class="etiqueta">Unity</span>
+            <span class="etiqueta">C#</span>
+            <span class="etiqueta">DOTween</span>
+            <span class="etiqueta">ScriptableObjects</span>
+            <span class="etiqueta">WebGL</span>
+            <span class="etiqueta">Fisher-Yates</span>
+            <span class="etiqueta">State Machine</span>
+            <span class="etiqueta">Prefabs</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div><!-- /body80 -->
+
+  <footer>
+    <p>DMP</p>
+  </footer>
+
+  <!-- UNITY LOADER -->
+  <script>
+    var canvas = document.querySelector("#unity-canvas");
+
+    function unityShowBanner(msg, type) {
+      var warningBanner = document.querySelector("#unity-warning");
+      function updateBannerVisibility() {
+        warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
       }
-
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Web.loader.js";
-      var config = {
-        arguments: [],
-        dataUrl: buildUrl + "/Web.data",
-        frameworkUrl: buildUrl + "/Web.framework.js",
-        codeUrl: buildUrl + "/Web.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DMP",
-        productName: "MemoryRoyale",
-        productVersion: "0.1.0",
-        showBanner: unityShowBanner,
-        // errorHandler: function(err, url, line) {
-        //    alert("error " + err + " occurred at line " + line);
-        //    // Return 'true' if you handled this error and don't want Unity
-        //    // to process it further, 'false' otherwise.
-        //    return true;
-        // },
-      };
-
-      // By default, Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
-
-      // If you would like all file writes inside Unity Application.persistentDataPath
-      // directory to automatically persist so that the contents are remembered when
-      // the user revisits the site the next time, uncomment the following line:
-      // config.autoSyncPersistentDataPath = true;
-      // This autosyncing is currently not the default behavior to avoid regressing
-      // existing user projects that might rely on the earlier manual
-      // JS_FileSystem_Sync() behavior, but in future Unity version, this will be
-      // expected to change.
-
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-        document.querySelector("#unity-container").className = "unity-mobile";
-        canvas.className = "unity-mobile";
-
-        // To lower canvas resolution on mobile devices to gain some
-        // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
-
-
-      } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-        canvas.style.width = "900px";
-        canvas.style.height = "506px";
+      var div = document.createElement('div');
+      div.innerHTML = msg;
+      warningBanner.appendChild(div);
+      if (type == 'error') div.style = 'background: red; padding: 10px;';
+      else {
+        if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+        setTimeout(function() {
+          warningBanner.removeChild(div);
+          updateBannerVisibility();
+        }, 5000);
       }
+      updateBannerVisibility();
+    }
 
-      document.querySelector("#unity-loading-bar").style.display = "block";
+    var buildUrl = "Build";
+    var loaderUrl = buildUrl + "/memoryroyale.loader.js";
+    var config = {
+      arguments: [],
+      dataUrl:      buildUrl + "/memoryroyale.data",
+      frameworkUrl: buildUrl + "/memoryroyale.framework.js",
+      codeUrl:      buildUrl + "/memoryroyale.wasm",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName:   "DMP",
+      productName:   "MemoryRoyale",
+      productVersion:"0.1.0",
+      showBanner: unityShowBanner,
+    };
 
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
-              }).then((unityInstance) => {
-                document.querySelector("#unity-loading-bar").style.display = "none";
-                document.querySelector("#unity-fullscreen-button").onclick = () => {
-                  unityInstance.SetFullscreen(1);
-                };
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      var meta = document.createElement('meta');
+      meta.name = 'viewport';
+      meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+      document.getElementsByTagName('head')[0].appendChild(meta);
+      document.querySelector("#unity-container").className = "unity-mobile";
+      canvas.className = "unity-mobile";
+    }
 
-              }).catch((message) => {
-                alert(message);
-              });
-            };
+    document.querySelector("#unity-loading-bar").style.display = "block";
 
-      document.body.appendChild(script);
+    var script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = () => {
+      createUnityInstance(canvas, config, (progress) => {
+        document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
+      }).then((unityInstance) => {
+        document.querySelector("#unity-loading-bar").style.display = "none";
+        document.querySelector("#unity-fullscreen-button").onclick = () => {
+          unityInstance.SetFullscreen(1);
+        };
+      }).catch((message) => { alert(message); });
+    };
+    document.body.appendChild(script);
+  </script>
 
-    </script>
-  </body>
+  <!-- IDIOMA + ANIMACIONES -->
+  <script src="memoryroyale.js"></script>
+
+</body>
 </html>
