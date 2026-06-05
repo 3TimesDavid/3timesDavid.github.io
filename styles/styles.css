@@ -186,7 +186,7 @@ nav {
 /*NOMBRE, FOTO Y DESCRIPCIÓN-------------------------*/
 
 .hero{
-	margin-top:50px
+	margin-top:20px
 }
 .seccion_grid {
     display: flex;
@@ -195,9 +195,11 @@ nav {
 }
 
 .columna_izquierda {
-    width:60%;
+    width:100%;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 
 }
 
@@ -212,7 +214,8 @@ nav {
     font-size: clamp(2.5rem, 6vw, 8rem);
 	color: var(--texto_david);
 	font-family: "Bungee Shade", sans-serif;
-	margin-bottom: 10px;
+	margin: 10px;
+	display: flex;
 }
 
 
@@ -246,20 +249,6 @@ nav {
 }
 
 
-.columna_derecha {
-    width: 40%;
-    display:flex;
-    justify-content:center;
-}
-
-#imagen_perfil {
-    width: 70%;
-    height: auto;
-    border: 1px solid var(--borde_foto);
-    border-radius: 5%;
-	box-shadow: var(--sombra_imagen) 0px 0px 50px;
-}
-
 .rol{
 	color: var(--texto_normal);
   	font-size: clamp(1rem, 1vw, 1.5rem);
@@ -270,7 +259,6 @@ nav {
 
 .rol_container {
 	margin-top: 20px;
-	width: 120%;
 	display: flex;
 	flex-direction: column;
 	border-left: 5px solid var(--barra_horizontal);
@@ -554,10 +542,16 @@ article{
     transform: scaleY(1);
     opacity: 1;
   }
+	10% {
+    transform: scale(1.02);
+  }
+  	20% {
+    transform: scale(1);
+  }
 	30% {
     transform: scale(1.01);
   }
-	60% {
+  	80% {
     transform: scale(1);
   }
 }
@@ -656,7 +650,7 @@ article{
   	margin: 0 auto;
   	margin-top: 20px;
 	border: 1px solid var(--borde_tarjeta);
-	box-shadow: var(--sombra_tarjeta) 0px 0px 50px;
+	box-shadow: var(--sombra_tarjeta) 0px 0px 20px;
 	gap: 10px;
 }
 
@@ -779,8 +773,8 @@ footer > p {
 
 
 	.rol_container {
-		margin-top: 20px;
-		width: 160%;
+		margin-top: 40px;
+		margin-bottom: 20px;
 	}
 
 
@@ -949,7 +943,6 @@ footer > p {
 
 	.rol_container {
 		margin-top: 20px;
-		width: 160%;
 	}
 
 
