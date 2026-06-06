@@ -310,22 +310,8 @@ nav {
 .imagen_irProyectos {
 	height: 10px;
 	width: auto;
-	animation: bounceRight 2s infinite 2s;
+	animation: bounceDown 2s infinite 2s;
 }
-
-@keyframes bounceRight {
-	0%, 20%, 50%, 80%, 100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-	40% {
-    transform: translateX(-5px);
-  }
-	60% {
-    transform: translateX(-2px);
-  }
-}
-
 
 
 .boton_descargar, .boton_proyectos {
@@ -345,7 +331,7 @@ nav {
 }
 
 .boton_descargar:hover, .boton_proyectos:hover{
-	transform: scale(1.05);
+	transform: scale(1.05); 
 }
 
 
