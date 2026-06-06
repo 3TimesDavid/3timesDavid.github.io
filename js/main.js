@@ -36,7 +36,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.tarjeta_proyectos, .imqiberica, .sgstecnos, .imqtecnocrea, .aidimme, .tarjeta_normtec, .tarj_formacion, .sobremi_parrafo_contenedor, .nombre, .apellido').forEach(el => {
+document.querySelectorAll('.imqiberica, .sgstecnos, .imqtecnocrea, .aidimme, .tarjeta_normtec, .tarj_formacion, .sobremi_parrafo_contenedor, .nombre, .apellido').forEach(el => {
     el.classList.add('slide-in');
     observer.observe(el);
 });
@@ -55,8 +55,8 @@ document.querySelectorAll('.tarjeta_proyectos, .imqiberica, .sgstecnos, .imqtecn
  
   /* ── TIMINGS (ms) ───────────────────────────────────────────── */
   const T = {
-    pauseName:   1500,  // tiempo que el nombre completo está visible
-    pauseWord:   1500,  // tiempo que Developer/Multiplatform/Projects está visible
+    pauseName:   250,  // tiempo que el nombre completo está visible
+    pauseWord:   250,  // tiempo que Developer/Multiplatform/Projects está visible
     collapseAll:  1000,  // duración del colapso (debe coincidir con el CSS)
     expandDelay:  600,  // escalonado entre líneas al expandirse
     expandCSS:    1000,  // duración de la expansión (debe coincidir con el CSS)

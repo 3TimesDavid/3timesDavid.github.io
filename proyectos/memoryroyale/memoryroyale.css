@@ -160,6 +160,7 @@ h2 {
 .project_screenshot {
   height: auto;
   width: 50%;
+  border-radius: 10px;
 }
 
 
@@ -421,7 +422,6 @@ h2 {
    ============================================================ */
 
 aside {
-  margin-top: 50px;
   display: grid;
   grid-template-columns: 1fr 3fr;
 }
@@ -493,6 +493,7 @@ aside {
   height: auto;
   width: 100px;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .siguiente_arrow {
