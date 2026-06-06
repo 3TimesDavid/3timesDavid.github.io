@@ -28,12 +28,12 @@
         <h1 class="hero_titulo">APPASEO</h1>
         <span data-es="2024–2025" data-en="2024–2025">2024–2025</span>
         <p class="hero_subtitulo"
-          data-es="Juego de cartas 2D desarrollado en Unity · C#"
-          data-en="2D card game developed in Unity · C#">
+          data-es="Aplicacion de cuidadores de mascotas en Unity · C#"
+          data-en="Caregivers application in Unity · C#">
         </p>
       </div>
       <div>
-        <img class="project_screenshot" src="../../src/appaseo_screenshot.png">
+        <img class="project_screenshot" src="../../src/appaseo_logo.png">
       </div>
     </section>
 
@@ -48,32 +48,30 @@
 
         <div class="info_card">
 
-          <p data-es="Memory Royale es un juego de memoria multijugador local (2 – 4 jugadores, hotseat) desarrollado en Unity con C#."
-             data-en="Memory Royale is a local multiplayer memory game (2 – 4 players, hotseat) developed in Unity with C#.">
+          <p data-es="APPASEO es una aplicación fullstack de cuidado de mascotas desarrollada en Unity con C#, Node.js + Express y MySQL."
+            data-en="APPASEO is a fullstack pet care application developed in Unity with C#, Node.js + Express and MySQL.">
           </p>
-          <p data-es="Cada jugador tiene puntos de salud y se trata de debilitar a los rivales con los efectos de las cartas cuando se encuentran pares iguales."
-             data-en="Each player has health points and the aim is to beat rivals with the effects of the cards when matching pairs are found.">
+          <p data-es="La app conecta dueños de mascotas con cuidadores disponibles: los cuidadores publican peticiones de acogida y los dueños las buscan por proximidad, fecha y tipo de animal."
+            data-en="The app connects pet owners with available carers: carers publish hosting requests and owners search them by proximity, date and animal type.">
           </p>
-          <p data-es="La arquitectura central se basa en una máquina de estados con cuatro fases por turno (inicio, intento, selección y fin), gestionada por la clase GameLogic."
-          data-en="The core architecture is based on a state machine with four phases per turn (start, attempt, selection and end), managed by the GameLogic class.">
+          <p data-es="La arquitectura sigue el patrón de tres capas: el frontend en Unity realiza peticiones HTTP mediante UnityWebRequest, el backend en Node.js + Express expone una API REST, y MySQL alojado en la nube persiste usuarios, anuncios y valoraciones."
+            data-en="The architecture follows a three-layer pattern: the Unity frontend makes HTTP requests via UnityWebRequest, the Node.js + Express backend exposes a REST API, and a cloud-hosted MySQL database persists users, listings and reviews.">
           </p>
-          <p data-es="Las cartas y los paneles de jugador se generan mediante prefabs instanciados dinámicamente en tiempo de ejecución."
-          data-en="Cards and player panels are generated via dynamically instantiated prefabs at runtime.">
+          <p data-es="Las tarjetas de cuidadores, peticiones de acogida y opiniones son prefabs instanciados dinámicamente a partir de los datos recibidos del servidor."
+            data-en="Carer cards, hosting listings and reviews are dynamically instantiated prefabs populated from server data at runtime.">
           </p>
-          <p data-es="Se utilizaron corrutinas para sincronizar el retardo entre el volteo de cartas y su ocultación, y para dar tiempo de lectura al narrador en los efectos automáticos."
-          data-en="Coroutines were used to synchronise the delay between card flipping and hiding, and to allow reading time for the narrator during automatic effects.">
-          </p>
-          <p data-es="Las animaciones se implementaron con DOTween."
-          data-en="Animations were implemented with DOTween.">
-          </p>
+
           <div class="tech_grid">
             <span class="etiqueta">Unity</span>
             <span class="etiqueta">C#</span>
-            <span class="etiqueta">DOTween</span>
-            <span class="etiqueta">ScriptableObjects</span>
-            <span class="etiqueta">WebGL</span>
+            <span class="etiqueta">Node.js</span>
+            <span class="etiqueta">Express</span>
+            <span class="etiqueta">MySQL</span>
+            <span class="etiqueta">REST API</span>
+            <span class="etiqueta">UnityWebRequest</span>
             <span class="etiqueta">Prefabs</span>
           </div>
+
         </div>
       </div>
     </section>
@@ -206,11 +204,12 @@
         <div class="siguiente_proyecto_container">
           <a class="boton_siguiente_proyecto" href="../appaseo/appaseo.html">
 
-            <img class="siguiente_screenshot" src="../../src/appaseo_screenshot.png">
+            
 
             <div class="siguiente_proyecto_texto">
               <span class="siguiente_label" data-es="Siguiente proyecto" data-en="Next project">Siguiente proyecto</span>
-              <span class="siguiente_nombre">APPASEO</span>
+              <span class="siguiente_nombre">Memory Royale</span>
+              <img class="siguiente_screenshot" src="../../src/memoryRoyale_logo.png">
             </div>
             <img class="siguiente_arrow" src="../../src/Arrow_symbol_white_down.png">
           </a>
@@ -298,7 +297,7 @@
   </script>
 
   <!-- IDIOMA + ANIMACIONES -->
-  <script src="memoryroyale.js"></script>
+  <script src="appaseo.js"></script>
 
 </body>
 </html>

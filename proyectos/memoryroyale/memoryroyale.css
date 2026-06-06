@@ -421,7 +421,7 @@ h2 {
    ============================================================ */
 
 aside {
-  margin-top: 100px;
+  margin-top: 50px;
   display: grid;
   grid-template-columns: 1fr 3fr;
 }

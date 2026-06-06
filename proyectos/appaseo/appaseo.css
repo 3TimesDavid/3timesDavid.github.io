@@ -160,6 +160,7 @@ h2 {
 .project_screenshot {
   height: auto;
   width: 50%;
+  border-radius: 10px;
 }
 
 
@@ -493,6 +494,7 @@ aside {
   height: auto;
   width: 100px;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .siguiente_arrow {
