@@ -1,6 +1,5 @@
 /* ============================================================
-   MEMORY ROYALE — Subpágina
-   Hereda variables de color del sistema de diseño principal
+   APPASEO — Subpágina
    ============================================================ */
 
 *, *::before, *::after {
@@ -32,12 +31,9 @@ body {
 
 ul { margin: 0; padding: 0; }
 li { list-style-type: none; display: flex; align-items: center; }
-section { margin-bottom: 60px;}
+section { margin-bottom: 60px; }
 
-/* ============================================================
-   NAV
-   ============================================================ */
-
+/* NAV */
 nav {
   width: 100%;
   padding: clamp(10px, 1vw, 20px);
@@ -58,27 +54,17 @@ nav {
   gap: 8px;
   text-decoration: none;
   color: var(--texto_normal);
-  font-size: clamp(0.8rem, 1vw, 1rem);
   opacity: 0.7;
   transition: opacity 0.2s ease, gap 0.2s ease;
 }
 .nav_back:hover { opacity: 1; gap: 12px; }
-.nav_back_arrow { 
+.nav_back_arrow {
   height: 15px;
-	width: auto;
+  width: auto;
   transform: rotate(90deg);
 }
 
-.nav_titulo {
-  font-family: "Bungee Shade", sans-serif;
-  font-size: clamp(0.9rem, 1.2vw, 1.4rem);
-  color: var(--texto_normal);
-}
-
-/* ============================================================
-   WRAPPER
-   ============================================================ */
-
+/* WRAPPER */
 .body80 {
   display: flex;
   flex-direction: column;
@@ -87,11 +73,7 @@ nav {
   margin: 0 auto;
 }
 
-
-/* ============================================================
-   TÍTULOS DE SECCIÓN
-   ============================================================ */
-
+/* TÍTULOS DE SECCIÓN */
 .titulo_seccion {
   display: flex;
   align-items: center;
@@ -113,11 +95,7 @@ h2 {
   white-space: nowrap;
 }
 
-
-/* ============================================================
-   HERO
-   ============================================================ */
-
+/* HERO */
 .hero_section {
   margin-top: 10px;
   display: grid;
@@ -125,13 +103,11 @@ h2 {
   margin-bottom: 20px;
 }
 
-
 .hero {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-
 
 .hero_titulo {
   font-family: "Oswald", sans-serif;
@@ -163,214 +139,7 @@ h2 {
   border-radius: 10px;
 }
 
-
-.efectos_grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
-}
-
-.efecto_card {
-  background: var(--fondo_tarjeta);
-  border: 1px solid var(--borde_tarjeta);
-  border-radius: 16px;
-  padding: 10px;
-  color: var(--texto_tarjeta);
-  box-shadow: var(--sombra_tarjeta) 0px 0px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.efecto_card__header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.ef_valor {
-  font-family: "Oswald", sans-serif;
-  border-radius: 8px;
-  padding: 4px 10px;
-  display: inline-block;
-  text-align: center;
-  min-width: 44px;
-  flex-shrink: 0;
-}
-
-.ef_valor--num,
-.ef_valor--special {
-  background: rgba(39, 116, 15, 0.461);
-  border: 1px solid rgba(3, 11, 21, 0.2);
-  color: rgba(3, 11, 21, 0.85);
-}
-
-.ef_nombre {
-  font-family: "Oswald", sans-serif;
-  font-size: 1rem;
-  color: rgba(3, 11, 21, 0.9);
-}
-
-.ef_desc {
-  font-size: clamp(0.78rem, 0.82vw, 0.95rem);
-  line-height: 1.55;
-  color: rgba(3, 11, 21, 0.75);
-}
-
-.ef_desc strong {
-  color: rgba(3, 11, 21, 0.95);
-}
- 
-
-
-
-
-/* ============================================================
-   CANVAS UNITY
-   ============================================================ */
-
-.unity_section { 
-  display: flex;
-  flex-direction: column;
-}
-
-.unity_wrapper {
-  background: var(--fondo_tarjeta);
-  border: 1px solid var(--borde_tarjeta);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: var(--sombra_tarjeta) 0px 0px 50px;
-  position: relative;
-}
-
-.unity_topbar {
-  background: rgba(3, 11, 21, 0.95);
-  border-bottom: 1px solid rgba(0, 255, 0, 0.2);
-  padding: 10px 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-
-.unity_topbar_titulo {
-  margin-left: auto;
-  font-size: 0.75rem;
-  color: rgba(208, 232, 245, 0.4);
-  font-family: monospace;
-}
-
-#unity-fullscreen-button {
-  cursor: pointer;
-  width: 32px;
-  height: 32px;
-  background: url('TemplateData/fullscreen-button.png') no-repeat center;
-  background-size: contain;
-  opacity: 0.6;
-  transition: opacity 0.2s;
-}
-
-#unity-fullscreen-button:hover {
-  opacity: 1;}
-
-.unity_canvas_container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-  background: #231F20;
-}
-
-#unity-container {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-
-#unity-canvas {
-  width: 100% !important;
-  height: 100% !important;
-  background: #231F20;
-  display: block;
-}
-
-
-#unity-loading-bar {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: none;
-  text-align: center;
-}
-
-#unity-logo {
-  width: 154px;
-  height: 130px;
-  background: url('TemplateData/unity-logo-dark.png') no-repeat center;
-  background-size: contain;
-  margin: 0 auto;
-}
-
-#unity-progress-bar-empty {
-  width: 141px;
-  height: 18px;
-  margin-top: 10px;
-  margin-left: 6.5px;
-  background: url('TemplateData/progress-bar-empty-dark.png') no-repeat center;
-}
-
-#unity-progress-bar-full {
-  width: 0%;
-  height: 18px;
-  background: url('TemplateData/progress-bar-full-dark.png') no-repeat center;
-}
-
-#unity-warning {
-  position: absolute;
-  left: 50%;
-  top: 5%;
-  transform: translate(-50%);
-  background: white;
-  padding: 10px;
-  display: none;
-  z-index: 10;
-}
-
-#unity-footer {
-  background: rgba(3, 11, 21, 0.9);
-  border-top: 1px solid rgba(0, 255, 0, 0.15);
-  padding: 6px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 12px;
-}
-
-#unity-logo-title-footer {
-  width: 102px;
-  height: 38px;
-  background: url('TemplateData/unity-logo-title-footer.png') no-repeat center;
-  background-size: contain;
-}
-
-#unity-build-title {
-  font-family: "Oswald", sans-serif;
-  font-size: 1rem;
-  color: rgba(208, 232, 245, 0.5);
-  margin-right: auto;
-}
-
-
-
-
-
-
-/* ============================================================
-   INFO DEL PROYECTO
-   ============================================================ */
-
+/* INFO DEL PROYECTO */
 .info_grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -393,16 +162,12 @@ h2 {
 }
 .info_card p:last-child { margin-bottom: 0; }
 
-
-/* ============================================================
-   ETIQUETAS TECH
-   ============================================================ */
-
+/* ETIQUETAS TECH */
 .tech_grid {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 6px;
+  margin-top: 14px;
 }
 
 .etiqueta {
@@ -415,50 +180,89 @@ h2 {
   font-weight: 600;
 }
 
+/* CARACTERÍSTICAS */
+.features_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.feature_card {
+  background: var(--fondo_tarjeta);
+  border: 1px solid var(--borde_tarjeta);
+  border-radius: 16px;
+  padding: 20px;
+  color: var(--texto_tarjeta);
+  box-shadow: var(--sombra_tarjeta) 0px 0px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
 
 
-/* ============================================================
-   ASIDE
-   ============================================================ */
 
+.feature_nombre {
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(1rem, 1.1vw, 1.2rem);
+  font-weight: 600;
+  color: rgba(3, 11, 21, 0.9);
+}
+
+.feature_desc {
+  font-size: clamp(0.78rem, 0.82vw, 0.95rem);
+  line-height: 1.6;
+  color: rgba(3, 11, 21, 0.75);
+}
+
+/* PLAY PLACEHOLDER */
+.play_placeholder {
+  background: var(--fondo_tarjeta);
+  border: 1px solid var(--borde_tarjeta);
+  border-radius: 20px;
+  padding: 60px 28px;
+  color: var(--texto_tarjeta);
+  box-shadow: var(--sombra_tarjeta) 0px 0px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+
+.play_placeholder_titulo {
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(1.2rem, 1.5vw, 1.8rem);
+  font-weight: 600;
+  color: rgba(3, 11, 21, 0.9);
+}
+
+
+/* ASIDE */
 aside {
-  margin-top: 100px;
   display: grid;
   grid-template-columns: 1fr 3fr;
 }
 
 .boton_volver_pag_princial {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   text-decoration: none;
   color: inherit;
-  opacity: 0.9;  
+  opacity: 0.9;
   transition: all 0.2s ease;
 }
 
-.boton_volver_pag_princial:hover {
-  opacity: 1;  
-}
+.boton_volver_pag_princial:hover { opacity: 1; }
 
 .volver_pag_principal_texto {
   margin-left: 15px;
-}
-
-.aside_navegacion {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 40px;
 }
 
 .volver_pag_principal {
   display: flex;
   align-items: center;
 }
-
-
-
 
 .boton_siguiente_proyecto {
   display: flex;
@@ -467,14 +271,11 @@ aside {
   gap: 10px;
   text-decoration: none;
   color: var(--texto_normal);
-  background: var(--fondo_principal);
   opacity: 0.9;
   transition: all 0.2s ease;
 }
 
-.boton_siguiente_proyecto:hover {
-  opacity: 1;
-}
+.boton_siguiente_proyecto:hover { opacity: 1; }
 
 .siguiente_proyecto_texto {
   display: flex;
@@ -482,9 +283,7 @@ aside {
   justify-content: center;
 }
 
-.siguiente_label {
-  opacity: 0.9;
-}
+.siguiente_label { opacity: 0.9; }
 
 .siguiente_nombre {
   font-family: "Oswald", sans-serif;
@@ -504,16 +303,7 @@ aside {
   opacity: 0.9;
 }
 
-
-
-
-
-
-
-/* ============================================================
-   FOOTER
-   ============================================================ */
-
+/* FOOTER */
 footer {
   border-top: 1px solid var(--borde_nav);
   margin-top: 30px;
@@ -530,11 +320,7 @@ footer > p {
   padding: 16px 0;
 }
 
-
-/* ============================================================
-   ANIMACIONES DE ENTRADA (scroll)
-   ============================================================ */
-
+/* ANIMACIONES */
 .slide-in {
   opacity: 0;
   transform: translateY(60px);
@@ -545,54 +331,25 @@ footer > p {
   transform: translateY(0);
 }
 
-
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
-
+/* RESPONSIVE */
 @media (max-width: 1024px) {
   .body80 { width: 85%; }
   .nav_inner { width: 85%; }
 }
 
 @media (max-width: 600px) {
-  .body80 { 
-    width: 90%;
-  }
-
+  .body80 { width: 90%; }
+  .nav_inner { width: 90%; }
   .hero_section {
-  margin-bottom: 20px;
-      display: flex;
+    display: flex;
     flex-direction: column;
-}
-
-  .project_screenshot {
-    display:none;
+    margin-bottom: 20px;
   }
-
+  .project_screenshot { display: none; }
   .hero {
     margin-top: 10px;
     margin-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
   }
-  .nav_inner { width: 90%; }
-  .nav_titulo { display: none; }
+  .features_grid { grid-template-columns: 1fr; }
   .info_grid { grid-template-columns: 1fr; }
-
-  .efectos_fila {
-    grid-template-columns: 50px 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 8px;
-    padding: 12px 16px;
-  }
- 
-  .efectos_fila > .ef_desc {
-    grid-column: 1 / -1;
-  }
- 
-  .efectos_fila--header > div:last-child {
-    display: none;
-  }
 }

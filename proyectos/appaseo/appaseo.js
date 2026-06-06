@@ -10,7 +10,6 @@ function applyLanguage(lang) {
 
 applyLanguage(lang);
 
-
 // SCROLL ANIMATIONS
 
 const observer = new IntersectionObserver((entries) => {

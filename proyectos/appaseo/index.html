@@ -14,7 +14,7 @@
   <!-- NAV -->
   <nav>
     <div class="nav_inner">
-      <a href="../../index.html" class="nav_back">
+      <a href="../../index.html#seccion_proyectos" class="nav_back">
         <img src="../../src/Arrow_symbol_white_down.png" class="nav_back_arrow">
       </a>
     </div>
@@ -23,10 +23,174 @@
   <div class="body80">
 
     <!-- HERO -->
-    <section class="hero_section">
 
-        <h1 class="hero_titulo">EN DESARROLLO</h1>
+    <h1 class="hero_titulo" data-es="En desarrollo" data-en="Under development"></h1>
+    <h1 class="hero_titulo">.</h1>
 
+    <section class="hero_section slide-in">
+      <div class="hero">
+        <h1 class="hero_titulo">APPASEO</h1>
+        <span data-es="2024–2025" data-en="2024–2025">2024–2025</span>
+        <p class="hero_subtitulo"
+          data-es="Aplicación fullstack de cuidado de mascotas"
+          data-en="Fullstack pet care application · Unity · Node.js · MySQL">
+        </p>
+      </div>
+      <div>
+        <img class="project_screenshot" src="../../src/appaseo_logo.png">
+      </div>
+    </section>
+
+
+    <!-- SOBRE EL PROYECTO -->
+    <section class="slide-in">
+      <div class="titulo_seccion">
+        <h2 data-es="Sobre el proyecto" data-en="About the project">Sobre el proyecto</h2>
+        <div class="linea_horizontal"></div>
+      </div>
+
+      <div class="info_grid">
+
+        <div class="info_card">
+
+          <p data-es="APPASEO es una aplicación fullstack de cuidado de mascotas desarrollada en Unity con C#, Node.js + Express y MySQL."
+            data-en="APPASEO is a fullstack pet care application developed in Unity with C#, Node.js + Express and MySQL.">
+          </p>
+          <p data-es="La app conecta dueños de mascotas con cuidadores disponibles: los cuidadores publican peticiones de acogida y los dueños las buscan por proximidad, fecha y tipo de animal."
+            data-en="The app connects pet owners with available carers: carers publish hosting requests and owners search them by proximity, date and animal type.">
+          </p>
+          <p data-es="La arquitectura sigue el patrón de tres capas: el frontend en Unity realiza peticiones HTTP mediante UnityWebRequest, el backend en Node.js + Express expone una API REST y MySQL alojado en la nube persiste usuarios, anuncios y valoraciones."
+            data-en="The architecture follows a three-layer pattern: the Unity frontend makes HTTP requests via UnityWebRequest, the Node.js + Express backend exposes a REST API and a cloud-hosted MySQL database persists users, listings and reviews.">
+          </p>
+          <p data-es="Las tarjetas de cuidadores, peticiones de acogida y opiniones son prefabs instanciados dinámicamente a partir de los datos recibidos del servidor."
+            data-en="Carer cards, hosting listings and reviews are dynamically instantiated prefabs populated from server data at runtime.">
+          </p>
+
+          <div class="tech_grid">
+            <span class="etiqueta">Unity</span>
+            <span class="etiqueta">C#</span>
+            <span class="etiqueta">Node.js</span>
+            <span class="etiqueta">Express</span>
+            <span class="etiqueta">MySQL</span>
+            <span class="etiqueta">REST API</span>
+            <span class="etiqueta">UnityWebRequest</span>
+            <span class="etiqueta">Prefabs</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CARACTERÍSTICAS -->
+    <section class="slide-in">
+      <div class="titulo_seccion">
+        <h2 data-es="Características" data-en="Features">Características</h2>
+        <div class="linea_horizontal"></div>
+      </div>
+
+      <div class="features_grid">
+
+        <div class="feature_card">
+          <div class="feature_nombre"
+               data-es="Registro en 2 pasos"
+               data-en="2-step registration">Registro en 2 pasos</div>
+          <div class="feature_desc"
+               data-es="El primer paso recoge solo los datos esenciales. El segundo, opcional, registra al usuario como cuidador con información adicional como teléfono, política de fotos y animales con cuidados especiales."
+               data-en="The first step collects only essential data. The second, optional step registers the user as a carer with additional information such as phone number, photo policy and special-needs animals.">
+          </div>
+        </div>
+
+        <div class="feature_card">
+          <div class="feature_nombre"
+               data-es="Peticiones de acogida"
+               data-en="Hosting requests">Peticiones de acogida</div>
+          <div class="feature_desc"
+               data-es="Los cuidadores publican peticiones con fechas, tipos de mascota, precio y descripción. Los dueños las buscan con filtros de fecha, tipo de animal y ordenación."
+               data-en="Carers publish requests with dates, pet types, price and description. Owners search them with filters by date, animal type and sort order.">
+          </div>
+        </div>
+
+        <div class="feature_card">
+          <div class="feature_nombre"
+               data-es="Sistema de valoraciones"
+               data-en="Rating system">Sistema de valoraciones</div>
+          <div class="feature_desc"
+               data-es="Valoraciones de 1 a 5 estrellas con sistema de honor: el usuario debe aceptar haber contratado los servicios antes de publicar una opinión."
+               data-en="1 to 5 star ratings with an honour system: the user must confirm they have hired the carer's services before submitting a review.">
+          </div>
+        </div>
+
+        <div class="feature_card">
+          <div class="feature_nombre"
+               data-es="Gestión de perfil"
+               data-en="Profile management">Gestión de perfil</div>
+          <div class="feature_desc"
+               data-es="El usuario puede modificar nombre, población, descripción, email, contraseña y foto de perfil. También puede gestionar sus peticiones publicadas y darse de alta como cuidador."
+               data-en="Users can edit their name, location, description, email, password and profile photo. They can also manage their published requests and register as a carer.">
+          </div>
+        </div>
+
+        <div class="feature_card">
+          <div class="feature_nombre"
+               data-es="Sesión persistente"
+               data-en="Persistent session">Sesión persistente</div>
+          <div class="feature_desc"
+               data-es="Login automático al reabrir la app mediante toggle de recordar sesión. La sesión se mantiene entre escenas de Unity con dos singletons DontDestroyOnLoad."
+               data-en="Automatic login on relaunch via a remember-session toggle. Session persists across Unity scenes using two DontDestroyOnLoad singletons.">
+          </div>
+        </div>
+
+        <div class="feature_card">
+          <div class="feature_nombre"
+               data-es="Cuidadores cercanos"
+               data-en="Nearby carers">Cuidadores cercanos</div>
+          <div class="feature_desc"
+               data-es="La pantalla de inicio muestra hasta 6 cuidadores de la misma población que el usuario y los 4 mejor valorados globalmente, cargados dinámicamente desde MySQL."
+               data-en="The home screen shows up to 6 carers from the user's location and the 4 top-rated globally, dynamically loaded from MySQL.">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PLAY (placeholder hasta tener backend desplegado) -->
+    <section class="slide-in">
+      <div class="titulo_seccion">
+        <h2 data-es="Probar la app" data-en="Try the app">Probar la app</h2>
+        <div class="linea_horizontal"></div>
+      </div>
+
+      <div class="play_placeholder">
+        <p class="play_placeholder_titulo"
+           data-es="Próximamente disponible"
+           data-en="Coming soon">Próximamente disponible</p>
+      </div>
+    </section>
+
+
+    <!-- ASIDE NAVEGACIÓN -->
+    <section>
+      <aside>
+        <div class="volver_pag_principal">
+          <a class="boton_volver_pag_princial" href="../../index.html#seccion_proyectos">
+            <img class="nav_back_arrow" src="../../src/Arrow_symbol_white_down.png">
+            <span class="volver_pag_principal_texto" data-es="Volver" data-en="Back">Volver</span>
+          </a>
+        </div>
+
+        <div class="siguiente_proyecto_container">
+          <a class="boton_siguiente_proyecto" href="../memoryroyale/index.html">
+            <div class="siguiente_proyecto_texto">
+              <span class="siguiente_label" data-es="Siguiente proyecto" data-en="Next project">Siguiente proyecto</span>
+              <span class="siguiente_nombre">Memory Royale</span>
+              <img class="siguiente_screenshot" src="../../src/memoryRoyale_logo.png">
+            </div>
+            <img class="siguiente_arrow" src="../../src/Arrow_symbol_white_down.png">
+          </a>
+        </div>
+      </aside>
     </section>
 
   </div>
@@ -35,10 +199,7 @@
     <p>D M P</p>
   </footer>
 
-  
-
-  <!-- IDIOMA + ANIMACIONES -->
-  <script src="memoryroyale.js"></script>
+  <script src="appaseo.js"></script>
 
 </body>
 </html>
