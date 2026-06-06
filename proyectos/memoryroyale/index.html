@@ -274,6 +274,14 @@
       document.getElementsByTagName('head')[0].appendChild(meta);
       document.querySelector("#unity-container").className = "unity-mobile";
       canvas.className = "unity-mobile";
+
+      canvas.style.width = window.innerWidth + "px";
+      canvas.style.height = window.innerHeight + "px";
+
+      window.addEventListener('resize', function(){
+      canvas.style.width = window.innerWidth + "px";
+      canvas.style.height = window.innerHeight + "px";
+      });
     }
 
     document.querySelector("#unity-loading-bar").style.display = "block";
