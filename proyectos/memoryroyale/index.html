@@ -24,16 +24,14 @@
 
     <!-- HERO -->
     <section class="hero_section slide-in">
+      <img class="project_screenshot" src="../../src/memoryRoyale_logo2.png">
       <div class="hero">
         <h1 class="hero_titulo">Memory Royale</h1>
         <span data-es="2024–2025" data-en="2024–2025">2024–2025</span>
         <p class="hero_subtitulo"
-          data-es="Juego de cartas 2D desarrollado en Unity · C#"
-          data-en="2D card game developed in Unity · C#">
+          data-es="Juego de cartas 2D desarrollado en Unity"
+          data-en="2D card game developed in Unity">
         </p>
-      </div>
-      <div>
-        <img class="project_screenshot" src="../../src/memoryRoyale_logo.png">
       </div>
     </section>
 
@@ -96,17 +94,20 @@
         <span class="ef_valor ef_valor--num">2 – 10</span>
         <span class="ef_nombre" data-es="Daño directo" data-en="Direct damage">Daño directo</span>
       </div>
+      <img class="efecto_card_imagen" src="../../src/2-10.png">
       <div class="ef_desc"
            data-es="Resta tantos PS al rival elegido como valor tenga la carta."
            data-en="Deals damage equal to the card's value to the chosen rival.">
+           
       </div>
     </div>
 
     <div class="efecto_card">
       <div class="efecto_card__header">
         <span class="ef_valor ef_valor--special">J</span>
-        <span class="ef_nombre" data-es="Robo de vida +2 -2" data-en="Life steal +2 -2">Robo de vida</span>
+        <span class="ef_nombre" data-es="Robo de vida" data-en="Life steal">Robo de vida</span>
       </div>
+      <img class="efecto_card_imagen" src="../../src/J.png">
       <div class="ef_desc"
            data-es="Recuperas 2 PS. Todos los rivales reciben 2 PS de daño."
            data-en="You recover 2 HP. All rivals take 2 HP of damage.">
@@ -117,8 +118,9 @@
     <div class="efecto_card">
       <div class="efecto_card__header">
         <span class="ef_valor ef_valor--special">Q</span>
-        <span class="ef_nombre" data-es="Daño en área -5" data-en="Area damage -5">Daño en área</span>
+        <span class="ef_nombre" data-es="Daño en área" data-en="Area damage">Daño en área</span>
       </div>
+      <img class="efecto_card_imagen" src="../../src/Q.png">
       <div class="ef_desc"
            data-es="Todos los rivales reciben 5 PS de daño. Tú no recibes daño."
            data-en="All rivals take 5 HP of damage. You take no damage.">
@@ -131,6 +133,7 @@
         <span class="ef_valor ef_valor--special">K</span>
         <span class="ef_nombre" data-es="Escudo" data-en="Shield">Escudo</span>
       </div>
+      <img class="efecto_card_imagen" src="../../src/k.png">
       <div class="ef_desc"
            data-es="Obtienes un escudo que bloquea el siguiente daño recibido. Máximo 3 escudos."
            data-en="You gain a shield that blocks the next incoming damage. Up to 3 shields.">
@@ -141,8 +144,9 @@
     <div class="efecto_card">
       <div class="efecto_card__header">
         <span class="ef_valor ef_valor--special">A</span>
-        <span class="ef_nombre" data-es="Curación +5" data-en="Heal +5">Curación</span>
+        <span class="ef_nombre" data-es="Curación" data-en="Heal">Curación</span>
       </div>
+      <img class="efecto_card_imagen" src="../../src/A.png">
       <div class="ef_desc"
            data-es="Recuperas 5 PS. Sin límite de PS máximos."
            data-en="You recover 5 HP. No maximum HP cap.">
@@ -162,15 +166,13 @@
     <!-- UNITY GAME -->
     <section class="unity_section slide-in">
       <div class="titulo_seccion">
-        <h2 data-es="Play" data-en="Play">Efectos de cartas</h2>
+        <h2 data-es="Jugar*" data-en="Play*">Efectos de cartas</h2>
         <div class="linea_horizontal"></div>
       </div>
-      <div class="unity_wrapper">
-        <div class="unity_topbar">
-          <span class="unity_topbar_titulo"></span>
-          <div id="unity-fullscreen-button"></div>
-        </div>
 
+      <div id="unity-fullscreen-button"></div>
+      
+      <div class="unity_wrapper">
         <div class="unity_canvas_container">
           <div id="unity-container">
             <canvas id="unity-canvas" tabindex="-1"></canvas>
@@ -183,13 +185,9 @@
             <div id="unity-warning"></div>
           </div>
         </div>
-
-        <div id="unity-footer">
-          <div id="unity-build-title">MemoryRoyale WebGL Build</div>
-          <div id="unity-logo-title-footer"></div>
-        </div>
       </div>
 
+      <span class="unity-note" data-es="* NOTA: Algunas funcionalidades del juego pueden presentar errores, sobre todo en Android o IOS, debido a que fue desarrollado para Windows." data-en="* NOTE: Some features may not work correctly, especially on Android or iOS, as the app was developed for Windows."></span>
     </section>
 
     <!-- SIGUIENTE PROYECTO -->
@@ -209,7 +207,7 @@
             <div class="siguiente_proyecto_texto">
               <span class="siguiente_label" data-es="Siguiente proyecto" data-en="Next project">Siguiente proyecto</span>
               <span class="siguiente_nombre">APPASEO</span>
-              <img class="siguiente_screenshot" src="../../src/appaseo_logo.png">
+              <!--<img class="siguiente_screenshot" src="../../src/appaseo_logo.png">-->
             </div>
             <img class="siguiente_arrow" src="../../src/Arrow_symbol_white_down.png">
           </a>

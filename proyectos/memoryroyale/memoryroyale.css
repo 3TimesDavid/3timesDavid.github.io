@@ -15,7 +15,7 @@ body {
   --fondo_etiqueta: rgb(226, 238, 244);
   --fondo_boton: rgb(46, 135, 46);
   --texto_normal: rgb(208, 232, 245);
-  --texto_tarjeta: rgba(3, 11, 21, 0.9);
+  --texto_tarjeta: rgba(3, 11, 21, 1);
   --texto_boton: rgb(208, 232, 245);
   --texto_seccion: rgb(208, 232, 245);
   --barra_horizontal: rgb(0, 255, 0);
@@ -41,6 +41,7 @@ section { margin-bottom: 60px;}
 nav {
   width: 100%;
   padding: clamp(10px, 1vw, 20px);
+  margin-top: 20px;
 }
 
 .nav_inner {
@@ -97,7 +98,7 @@ nav {
   align-items: center;
   gap: 16px;
   height: 50px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .linea_horizontal {
@@ -118,12 +119,27 @@ h2 {
    HERO
    ============================================================ */
 
+/* HERO */
 .hero_section {
   margin-top: 10px;
-  display: grid;
-  grid-template-columns: 2.5fr 1fr;
-  margin-bottom: 20px;
+  display: flex;
+  margin-bottom: 40px;
+  align-items: start;
 }
+
+
+.project_screenshot {
+  width: 20%; 
+  max-width: 250px;
+  min-width: 130px;
+  height: auto;
+
+  background-color: var(--fondo_tarjeta);
+  border-radius: 20px;
+  margin-right: 40px;
+}
+
+
 
 
 .hero {
@@ -132,12 +148,10 @@ h2 {
   gap: 16px;
 }
 
-
 .hero_titulo {
   font-family: "Oswald", sans-serif;
   font-size: clamp(3rem, 6vw, 8rem);
   color: var(--texto_normal);
-  line-height: 1;
   opacity: 0;
   transform: translateY(30px);
   animation: fadeUp 0.5s ease-out 0.1s forwards;
@@ -157,11 +171,20 @@ h2 {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.project_screenshot {
-  height: auto;
-  width: 50%;
-  border-radius: 10px;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .efectos_grid {
@@ -176,7 +199,7 @@ h2 {
   border-radius: 16px;
   padding: 10px;
   color: var(--texto_tarjeta);
-  box-shadow: var(--sombra_tarjeta) 0px 0px 20px;
+  box-shadow: var(--sombra_tarjeta) 0px 0px 10px;
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -201,28 +224,30 @@ h2 {
 .ef_valor--num,
 .ef_valor--special {
   background: rgba(39, 116, 15, 0.461);
-  border: 1px solid rgba(3, 11, 21, 0.2);
-  color: rgba(3, 11, 21, 0.85);
+  border: 2px solid var(--fondo_principal);
+  color: var(--texto_tarjeta);
 }
 
 .ef_nombre {
   font-family: "Oswald", sans-serif;
   font-size: 1rem;
-  color: rgba(3, 11, 21, 0.9);
+  color: var(--texto_tarjeta);
 }
 
 .ef_desc {
   font-size: clamp(0.78rem, 0.82vw, 0.95rem);
-  line-height: 1.55;
-  color: rgba(3, 11, 21, 0.75);
+  color: var(--texto_tarjeta);
 }
 
 .ef_desc strong {
-  color: rgba(3, 11, 21, 0.95);
+  color: var(--texto_tarjeta);
 }
  
 
-
+.efecto_card_imagen {
+  width: 100%;
+  height: auto;
+}
 
 
 /* ============================================================
@@ -236,38 +261,27 @@ h2 {
 
 .unity_wrapper {
   background: var(--fondo_tarjeta);
-  border: 1px solid var(--borde_tarjeta);
+  border: 2px solid var(--fondo_tarjeta);
   border-radius: 20px;
-  overflow: hidden;
-  box-shadow: var(--sombra_tarjeta) 0px 0px 50px;
-  position: relative;
-}
-
-.unity_topbar {
-  background: rgba(3, 11, 21, 0.95);
-  border-bottom: 1px solid rgba(0, 255, 0, 0.2);
-  padding: 10px 16px;
   display: flex;
-  align-items: center;
-  gap: 8px;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-
-.unity_topbar_titulo {
-  margin-left: auto;
-  font-size: 0.75rem;
-  color: rgba(208, 232, 245, 0.4);
-  font-family: monospace;
-}
 
 #unity-fullscreen-button {
   cursor: pointer;
-  width: 32px;
-  height: 32px;
+  width: 20px;
+  height: 20px;
   background: url('TemplateData/fullscreen-button.png') no-repeat center;
   background-size: contain;
   opacity: 0.6;
   transition: opacity 0.2s;
+  border-radius: 10px;
+  position: absolute;
+  top: 40px;
+  right: 0px;
+  z-index: 10;
 }
 
 #unity-fullscreen-button:hover {
@@ -338,31 +352,12 @@ h2 {
   z-index: 10;
 }
 
-#unity-footer {
-  background: rgba(3, 11, 21, 0.9);
-  border-top: 1px solid rgba(0, 255, 0, 0.15);
-  padding: 6px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 12px;
+
+
+.unity-note {
+  margin-top: 10px;
+  font-size: clamp(0.8rem, 0.5vw, 1rem);
 }
-
-#unity-logo-title-footer {
-  width: 102px;
-  height: 38px;
-  background: url('TemplateData/unity-logo-title-footer.png') no-repeat center;
-  background-size: contain;
-}
-
-#unity-build-title {
-  font-family: "Oswald", sans-serif;
-  font-size: 1rem;
-  color: rgba(208, 232, 245, 0.5);
-  margin-right: auto;
-}
-
-
 
 
 
@@ -383,15 +378,14 @@ h2 {
   border-radius: 20px;
   padding: 28px;
   color: var(--texto_tarjeta);
-  box-shadow: var(--sombra_tarjeta) 0px 0px 30px;
+  box-shadow: var(--sombra_tarjeta) 0px 0px 10px;
 }
 
 .info_card p {
-  font-size: clamp(0.85rem, 0.9vw, 1rem);
-  line-height: 1.7;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
-.info_card p:last-child { margin-bottom: 0; }
+
+
 
 
 /* ============================================================
@@ -412,7 +406,6 @@ h2 {
   padding: 6px 14px;
   font-size: clamp(0.7rem, 0.7vw, 0.85rem);
   color: var(--texto_tarjeta);
-  font-weight: 600;
 }
 
 
@@ -515,7 +508,6 @@ aside {
 
 footer {
   border-top: 1px solid var(--borde_nav);
-  margin-top: 30px;
   display: flex;
   align-items: center;
 }
