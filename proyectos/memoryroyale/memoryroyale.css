@@ -18,8 +18,8 @@ body {
   --texto_tarjeta: rgba(3, 11, 21, 1);
   --texto_boton: rgb(208, 232, 245);
   --texto_seccion: rgb(208, 232, 245);
-  --barra_horizontal: rgb(0, 255, 0);
-  --borde_tarjeta: rgb(46, 135, 46);
+  --barra_horizontal: rgb(0, 190, 0);
+  --borde_tarjeta: rgb(208, 232, 245);
   --borde_etiqueta: rgba(3, 11, 21, 0.9);
   --borde_nav: rgb(208, 232, 245);
   --sombra_tarjeta: rgb(0, 0, 0);
@@ -28,7 +28,30 @@ body {
   color: var(--texto_normal);
   background: var(--fondo_principal);
   min-height: 100vh;
+
+  position: relative;
+  z-index: 0;
+
 }
+
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: 
+    linear-gradient(rgba(100, 160, 255, 0.08) 1px, transparent 1px), 
+    linear-gradient(90deg, rgba(100, 160, 255, 0.08) 1px, transparent 1px), 
+    linear-gradient(rgba(100, 160, 255, 0.15) 1px, transparent 1px), 
+    linear-gradient(90deg, rgba(100, 160, 255, 0.15) 1px, transparent 1px);
+  background-size: 40px 40px, 40px 40px, 200px 200px, 200px 200px;
+  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+
+
 
 ul { margin: 0; padding: 0; }
 li { list-style-type: none; display: flex; align-items: center; }
@@ -42,6 +65,8 @@ nav {
   width: 100%;
   padding: clamp(10px, 1vw, 20px);
   margin-top: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .nav_inner {
@@ -86,6 +111,9 @@ nav {
   max-width: 2560px;
   width: 70%;
   margin: 0 auto;
+  inset: 1;
+  position: relative;
+  z-index: 1;
 }
 
 
@@ -195,7 +223,6 @@ h2 {
 
 .efecto_card {
   background: var(--fondo_tarjeta);
-  border: 1px solid var(--borde_tarjeta);
   border-radius: 16px;
   padding: 10px;
   color: var(--texto_tarjeta);
@@ -281,7 +308,6 @@ h2 {
   position: absolute;
   top: 40px;
   right: 0px;
-  z-index: 10;
 }
 
 #unity-fullscreen-button:hover {
@@ -374,7 +400,6 @@ h2 {
 
 .info_card {
   background: var(--fondo_tarjeta);
-  border: 1px solid var(--borde_tarjeta);
   border-radius: 20px;
   padding: 28px;
   color: var(--texto_tarjeta);

@@ -15,9 +15,9 @@ body {
 	--texto_tarjeta:rgba(3, 11, 21, 0.9);
 	--texto_boton:rgb(208, 232, 245);
 	--texto_seccion: rgb(208, 232, 245);
-	--barra_horizontal:rgb(0, 255, 0);
+	--barra_horizontal:rgb(0, 190, 0);
 	--borde_foto: rgba(0, 230, 118, 0.1);
-	--borde_tarjeta: rgb(46, 135, 46);
+	--borde_tarjeta: rgb(208, 232, 245);
 	--borde_etiqueta:rgba(3, 11, 21, 0.9);
 	--borde_nav:rgb(208, 232, 245);
 	--sombra_tarjeta: rgb(0, 0, 0);
@@ -26,9 +26,26 @@ body {
 	font-family: "Montserrat", sans-serif;
 	color: var(--texto_normal);
 	background: var(--fondo_principal);
+
+  	position: relative;
 }
 
 
+body::before {
+  	content: '';
+  	position: fixed;
+  	inset: 0;
+  	pointer-events: none;
+  	z-index: 0;
+  	background-image: 
+    	linear-gradient(rgba(100, 160, 255, 0.08) 1px, transparent 1px), 
+    	linear-gradient(90deg, rgba(100, 160, 255, 0.08) 1px, transparent 1px), 
+    	linear-gradient(rgba(100, 160, 255, 0.15) 1px, transparent 1px), 
+    	linear-gradient(90deg, rgba(100, 160, 255, 0.15) 1px, transparent 1px);
+  	background-size: 40px 40px, 40px 40px, 200px 200px, 200px 200px;
+ 	mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+  	-webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+}
 
 
 
@@ -42,6 +59,8 @@ body {
 	margin: 0 auto;
 	gap:100px;
   	font-size: clamp(1em, 1vw, 2rem);
+  	position: relative;
+  	z-index: 1;
 }
 
 
@@ -359,7 +378,6 @@ article{
 	color: var(--texto_tarjeta);
 	height: auto;
 	background: var(--fondo_tarjeta);
-  	border: 1px solid var(--borde_tarjeta);
   	border-radius: 20px;
   	padding: 20px;
   	box-shadow: var(--sombra_tarjeta) 0px 0px 10px ;
@@ -496,7 +514,6 @@ article{
 	background: var(--fondo_tarjeta);
 	border-radius: 20px;
 	padding: 20px;
-	border: 1px solid var(--borde_tarjeta);
 	box-shadow: var(--sombra_tarjeta) 0px 0px 50px;
 	margin: 0 auto;
 	cursor: pointer;
@@ -628,7 +645,6 @@ article{
   	border-radius: 20px;
   	padding: 20px;
   	margin: 0 auto;
-	border: 1px solid var(--borde_tarjeta);
 	box-shadow: var(--sombra_tarjeta) 0px 0px 50px;
 }
 
@@ -659,7 +675,6 @@ article{
   	border-radius: 20px;
   	margin: 0 auto;
   	margin-top: 20px;
-	border: 1px solid var(--borde_tarjeta);
 	box-shadow: var(--sombra_tarjeta) 0px 0px 20px;
 	gap: 10px;
 }
