@@ -237,7 +237,7 @@ h2 {
 /* CARACTERÍSTICAS */
 .features_grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 16px;
 }
 
@@ -264,6 +264,41 @@ h2 {
   font-size: clamp(0.78rem, 0.82vw, 0.95rem);
   color: var(--texto_tarjeta);
 }
+
+
+.imagen_caracteristicas {
+  margin-top: 5px;
+  width: 100%;
+  max-height: auto;
+  border-radius: 20px;
+  align-self: center;
+  border: 2px solid var(--fondo_principal);
+  box-shadow: var(--sombra_tarjeta) 0px 0px 10px;
+}
+
+.imagen_caracteristicas_alargada {
+  margin-top: 5px;
+  width: 40%;
+  max-height: auto;
+  border-radius: 20px;
+  align-self: center; 
+  border: 2px solid var(--fondo_principal);
+  box-shadow: var(--sombra_tarjeta) 0px 0px 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ============================================================
    CANVAS UNITY
