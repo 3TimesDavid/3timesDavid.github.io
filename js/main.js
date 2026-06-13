@@ -14,6 +14,7 @@ langToggle.addEventListener('click', () => {
     applyLanguage(currentLang);
     langText.textContent = currentLang === 'es' ? 'EN' : 'ES';
     langToggle.classList.toggle('lang-active');
+    cargarPista(currentLang);
 });
 
 function applyLanguage(lang) {
@@ -139,6 +140,8 @@ document.querySelectorAll('.imqiberica, .sgstecnos, .imqtecnocrea, .aidimme, .ta
       await expandName();       // expande → David / Martínez / Palomares
     }
   }
+
+
  
   /* ── INIT ───────────────────────────────────────────────────── */
   function init() {
@@ -154,3 +157,71 @@ document.querySelectorAll('.imqiberica, .sgstecnos, .imqtecnocrea, .aidimme, .ta
   }
  
 })();
+
+// REPRODUCTOR
+const pistas = {
+  es: './src/david_laboratorio_es.mp3',
+  en: './src/david_laboratorio_en.mp3'
+};
+
+const audio = document.getElementById('reproductor_audio');
+const btnPlay = document.getElementById('reproductor_play');
+const progreso = document.getElementById('reproductor_progreso');
+const tiempoActual = document.getElementById('reproductor_actual');
+const tiempoDuracion = document.getElementById('reproductor_duracion');
+const titulo = document.getElementById('reproductor_titulo');
+
+const titulosPista = {
+  es: 'Sobre mí, modo canción',
+  en: 'About me, song mode'
+};
+
+function cargarPista(lang) {
+  const estabaSonando = !audio.paused;
+  audio.src = pistas[lang];
+  titulo.textContent = titulosPista[lang];
+  if (estabaSonando) audio.play();
+}
+
+function togglePlay() {
+  if (audio.paused) {
+    audio.play();
+    btnPlay.textContent = '⏸';
+  } else {
+    audio.pause();
+    btnPlay.textContent = '▶';
+  }
+}
+
+function formatTime(s) {
+  const m = Math.floor(s / 60);
+  const seg = Math.floor(s % 60).toString().padStart(2, '0');
+  return `${m}:${seg}`;
+}
+
+audio.addEventListener('timeupdate', () => {
+  const pct = (audio.currentTime / audio.duration) * 100 || 0;
+  progreso.style.width = pct + '%';
+  tiempoActual.textContent = formatTime(audio.currentTime);
+});
+
+audio.addEventListener('loadedmetadata', () => {
+  tiempoDuracion.textContent = formatTime(audio.duration);
+});
+
+audio.addEventListener('ended', () => {
+  btnPlay.textContent = '▶';
+  progreso.style.width = '0%';
+});
+
+function seekAudio(e) {
+  const rect = e.currentTarget.getBoundingClientRect();
+  const pct = (e.clientX - rect.left) / rect.width;
+  audio.currentTime = pct * audio.duration;
+}
+
+// Cargar pista según idioma actual
+cargarPista(currentLang);
+
+// Actualizar pista al cambiar idioma — añade esto dentro del langToggle click listener
+// cargarPista(currentLang);

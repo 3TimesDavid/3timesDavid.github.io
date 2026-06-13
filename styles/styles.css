@@ -292,6 +292,96 @@ nav {
 
 
 
+/*REPRODUCTOR MÚSICA-------------------------*/
+.reproductor_aside {
+ 	margin-top: 20px;
+	display: flex;
+  	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.reproductor {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	background: rgba(208, 232, 245, 0.05);
+	border: 1px solid var(--barra_horizontal);
+	border-radius: 14px;
+	padding: 14px 18px;
+	width: 55%;
+}
+
+.reproductor_btn {
+	background: var(--fondo_boton);
+	color: var(--texto_boton);
+	border: none;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	font-size: 1rem;
+	cursor: pointer;
+	flex-shrink: 0;
+	transition: transform 0.2s ease;
+}
+.reproductor_btn:hover { transform: scale(1.1); }
+
+.reproductor_info {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	flex: 1;
+}
+
+.reproductor_titulo {
+  font-size: 0.85rem;
+  color: var(--texto_normal);
+  opacity: 0.8;
+}
+
+.reproductor_barra_container {
+  width: 100%;
+  height: 4px;
+  background: rgba(208, 232, 245, 0.2);
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+}
+
+.reproductor_barra_progreso {
+  height: 100%;
+  width: 0%;
+  background: var(--barra_horizontal);
+  border-radius: 2px;
+  transition: width 0.1s linear;
+}
+
+.reproductor_tiempos {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: rgba(208, 232, 245, 0.5);
+}
+
+.nota_cancion {
+	font-size: 0.5rem;
+	margin-top:10px;
+	color: var(--texto_normal);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*BOTON DESCARGAR CV-------------------------*/
 .boton_descargar_container{
@@ -299,6 +389,7 @@ nav {
 	justify-content: center;
 	align-items: center;
 	gap: 40px;
+	margin-top: 80px;
 }
 
 
@@ -354,7 +445,6 @@ nav {
 	transform: scale(1.05); 
 	opacity: 1;
 }
-
 
 
 

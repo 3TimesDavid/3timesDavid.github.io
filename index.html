@@ -50,6 +50,27 @@
 			</div>
 		</div>
 
+		<aside class="reproductor_aside">
+			<div class="reproductor">
+				<button class="reproductor_btn" id="reproductor_play" onclick="togglePlay()">
+				▶
+				</button>
+				<div class="reproductor_info">
+					<span class="reproductor_titulo" id="reproductor_titulo">David en Laboratorio</span>
+					<div class="reproductor_barra_container" onclick="seekAudio(event)">
+						<div class="reproductor_barra_progreso" id="reproductor_progreso"></div>
+					</div>
+					<div class="reproductor_tiempos">
+						<span id="reproductor_actual">0:00</span>
+						<span id="reproductor_duracion">0:00</span>
+					</div>
+				</div>
+			</div>
+			<span class="nota_cancion" data-es="NOTA: Canción generada con Suno" data-en="NOTE: Generated song with Suno">Nota canción generada</span>
+		</aside>
+
+		<audio id="reproductor_audio"></audio>
+
 		<div class="boton_descargar_container">
 			<a class="boton_descargar" href="https://drive.google.com/file/d/1wkPfKiGOGIiJzOkGDZEbdVCohfIR0Tc5/view?usp=drive_link" target="_blank">
 				<img src="src/CV_symbol.png" class="imagen_cv">
@@ -63,6 +84,8 @@
 			</a>
 		</div>
 	</section>
+
+
 
 
 <!--EXPERIENCIA LABORAL--------------->
