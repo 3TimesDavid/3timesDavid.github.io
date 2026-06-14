@@ -124,6 +124,44 @@ nav {
 
 
 
+#boton_arriba {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--fondo_boton);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#boton_arriba img {
+  width: 20px;
+  height: auto;
+  transform: rotate(-90deg);
+}
+
+#boton_arriba.visible {
+  opacity: 0.5;
+  visibility: visible;
+}
+
+#boton_arriba:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+
+
+
+
 
 
 /* ============================================================
@@ -592,6 +630,10 @@ footer{
 @media (max-width: 1024px) {
   .body80 { width: 85%; }
   .nav_inner { width: 85%; }
+
+  	#boton_arriba {
+		display: none;
+	}
 }
 
 @media (max-width: 600px) {

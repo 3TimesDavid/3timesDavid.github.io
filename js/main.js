@@ -25,6 +25,21 @@ function applyLanguage(lang) {
 }
 
 
+// Boton scroll arriba
+const botonArriba = document.getElementById('boton_arriba');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    botonArriba.classList.add('visible');
+  } else {
+    botonArriba.classList.remove('visible');
+  }
+});
+
+botonArriba.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
 
 // SCROLL ANIMATIONS — entrada desde la derecha
 
