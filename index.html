@@ -31,13 +31,21 @@
 <body>
 
 <!--PANEL NAVEGACION------------------>
-	<nav>
+  <nav>
+    
+    <div class="nav_inner">
+      <a href="../../" class="nav_back">
+        <span class="dmp_texto">D M P</span>
+      </a>
+    </div>
+
 		<div class="boton_idioma_container">
 			<button id="boton_idioma">
 				<span class="lang-text" id="lang-text">EN</span>
 			</button>
 		</div>
-	</nav>
+
+  </nav>
 
 <div class="body80">
 
@@ -82,7 +90,7 @@
 					</div>
 				</div>
 			</div>
-			<span class="nota_cancion" data-es="NOTA: Canción generada con Suno" data-en="NOTE: Generated song with Suno">Nota canción generada</span>
+			<span class="nota_cancion" data-es="NOTA: Generado con Suno" data-en="NOTE: Generated with Suno">Nota canción generada</span>
 		</aside>
 
 		<audio id="reproductor_audio"></audio>
@@ -487,7 +495,9 @@
 </div>
 
 	<footer>
-		<p>D M P</p>
+		<a href="../../" class="nav_back">
+        	<span class="dmp_texto">D M P</span>
+      	</a>
 	</footer>
 
 	<script src="js/main.js"></script>

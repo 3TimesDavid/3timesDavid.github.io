@@ -1,14 +1,27 @@
-// IDIOMA — lee localStorage fijado desde la página principal
+// BOTON IDIOMA — ES / EN
+let currentLang = localStorage.getItem('lang') || 'es';
 
-const lang = localStorage.getItem('lang') || 'es';
+const langToggle = document.getElementById('boton_idioma');
+const langText = document.getElementById('lang-text');
+
+applyLanguage(currentLang);
+langText.textContent = currentLang === 'es' ? 'EN' : 'ES';
+if (currentLang === 'en') langToggle.classList.add('lang-active');
+
+langToggle.addEventListener('click', () => {
+    currentLang = currentLang === 'es' ? 'en' : 'es';
+    localStorage.setItem('lang', currentLang);
+    applyLanguage(currentLang);
+    langText.textContent = currentLang === 'es' ? 'EN' : 'ES';
+    langToggle.classList.toggle('lang-active');
+});
 
 function applyLanguage(lang) {
-    document.querySelectorAll('[data-es][data-en]').forEach(el => {
+    const elements = document.querySelectorAll('[data-es][data-en]');
+    elements.forEach(el => {
         el.textContent = el.getAttribute(`data-${lang}`);
     });
 }
-
-applyLanguage(lang);
 
 
 // SCROLL ANIMATIONS

@@ -1,7 +1,4 @@
-/* ============================================================
-   MEMORY ROYALE — Subpágina
-   Hereda variables de color del sistema de diseño principal
-   ============================================================ */
+
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -62,21 +59,23 @@ section { margin-bottom: 60px;}
    ============================================================ */
 
 nav {
-  width: 100%;
-  padding: clamp(10px, 1vw, 20px);
-  margin-top: 20px;
-  position: relative;
-  z-index: 1;
+	background: var(--fondo_nav);
+  padding-top: clamp(10px, 1vw, 50px);
+  padding-bottom: clamp(10px, 1vw, 50px);
+	width: 100%;
+  display: flex;
 }
 
 .nav_inner {
-  width: 70%;
+  width: 50%;
   max-width: 2560px;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  margin-left: 5%;
 }
+
 
 .nav_back {
   display: flex;
@@ -89,17 +88,43 @@ nav {
   transition: opacity 0.2s ease, gap 0.2s ease;
 }
 .nav_back:hover { opacity: 1; gap: 12px; }
+
+
 .nav_back_arrow { 
   height: 15px;
 	width: auto;
   transform: rotate(90deg);
 }
 
-.nav_titulo {
-  font-family: "Bungee Shade", sans-serif;
-  font-size: clamp(0.9rem, 1.2vw, 1.4rem);
-  color: var(--texto_normal);
+.boton_idioma_container {
+  width: 50%;
+  max-width: 2560px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin-right: 5%;
 }
+
+#boton_idioma {
+    background: transparent;
+    border: 1px solid var(--borde_nav);
+    border-radius: 8px;
+    padding: 6px 12px;
+    color: var(--texto_normal);
+    transition: all 0.2s ease;
+    font-size: 0.8rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+#boton_idioma:hover {
+    background: var(--fondo_tarjeta);
+    color: var(--fondo_principal);
+}
+
+
+
+
+
 
 /* ============================================================
    WRAPPER
@@ -149,7 +174,6 @@ h2 {
 
 /* HERO */
 .hero_section {
-  margin-top: 10px;
   display: flex;
   margin-bottom: 40px;
   align-items: start;
@@ -531,19 +555,18 @@ aside {
    FOOTER
    ============================================================ */
 
-footer {
-  border-top: 1px solid var(--borde_nav);
-  display: flex;
-  align-items: center;
+footer{
+	border-top:1px solid var(--borde_nav);
+	margin-top: 30px;
+	display: flex;
+	justify-content: center;
+	height: 50px;
 }
 
-footer > p {
-  font-size: 1rem;
-  width: 100%;
-  text-align: center;
-  color: var(--texto_normal);
-  font-family: "Bungee Shade", sans-serif;
-  padding: 16px 0;
+.dmp_texto {
+	font-size: 0.8rem;
+	color: var(--texto_dmp);
+	font-family: "Bungee Shade", sans-serif;
 }
 
 

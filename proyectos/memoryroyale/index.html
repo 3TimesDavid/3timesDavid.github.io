@@ -4,20 +4,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Memory Royale | David Martínez</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Oswald:wght@500;700&family=Bungee+Shade&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="memoryroyale.css">
 </head>
 <body>
 
   <!-- NAV -->
   <nav>
+
     <div class="nav_inner">
-      <a href="../../#projects" class="nav_back">
+      <a href="../../" class="nav_back">
         <img src="../../src/Arrow_symbol_white_down.png" class="nav_back_arrow">
       </a>
     </div>
+
+		<div class="boton_idioma_container">
+			<button id="boton_idioma">
+				<span class="lang-text" id="lang-text">EN</span>
+			</button>
+		</div>
+
   </nav>
 
   <div class="body80">
@@ -27,7 +36,7 @@
       <img class="project_screenshot" src="../../src/memoryRoyale_logo2.png">
       <div class="hero">
         <h1 class="hero_titulo">Memory Royale</h1>
-        <span data-es="2024–2025" data-en="2024–2025">2024–2025</span>
+        <span data-es="2026" data-en="2026">2026</span>
         <p class="hero_subtitulo"
           data-es="Juego de cartas 2D desarrollado en Unity"
           data-en="2D card game developed in Unity">
@@ -109,9 +118,14 @@
       </div>
       <img class="efecto_card_imagen" src="../../src/J.png">
       <div class="ef_desc"
-           data-es="Recuperas 2 PS. Todos los rivales reciben 2 PS de daño."
-           data-en="You recover 2 HP. All rivals take 2 HP of damage.">
-        Recuperas <strong>2 PS</strong>. Todos los rivales reciben <strong>2 PS</strong> de daño.
+           data-es="Recuperas 2 PS."
+           data-en="You recover 2 HP.">
+        Recuperas 2 PS.
+      </div>
+      <div class="ef_desc"
+           data-es="Todos los rivales reciben 2 PS de daño."
+           data-en="All rivals take 2 HP of damage.">
+        Todos los rivales reciben 2 PS de daño.
       </div>
     </div>
 
@@ -122,9 +136,14 @@
       </div>
       <img class="efecto_card_imagen" src="../../src/Q.png">
       <div class="ef_desc"
-           data-es="Todos los rivales reciben 5 PS de daño. Tú no recibes daño."
-           data-en="All rivals take 5 HP of damage. You take no damage.">
-        Todos los rivales reciben <strong>5 PS</strong> de daño. Tú no recibes daño.
+           data-es="Todos los rivales reciben 5 PS de daño."
+           data-en="All rivals take 5 HP of damage.">
+        Todos los rivales reciben 5 PS de daño.
+      </div>
+      <div class="ef_desc"
+           data-es="Tú no recibes daño."
+           data-en="You take no damage.">
+        Tú no recibes daño.
       </div>
     </div>
 
@@ -135,9 +154,14 @@
       </div>
       <img class="efecto_card_imagen" src="../../src/K.png">
       <div class="ef_desc"
-           data-es="Obtienes un escudo que bloquea el siguiente daño recibido. Máximo 3 escudos."
-           data-en="You gain a shield that blocks the next incoming damage. Up to 3 shields.">
-        Obtienes un escudo que bloquea el siguiente daño recibido. Máximo <strong>3 escudos</strong>.
+           data-es="Obtienes un escudo que bloquea el siguiente daño recibido."
+           data-en="You gain a shield that blocks the next incoming damage.">
+        Obtienes un escudo que bloquea el siguiente daño recibido.
+      </div>
+      <div class="ef_desc"
+           data-es="Máximo 3 escudos."
+           data-en="Up to 3 shields.">
+        Máximo 3 escudos.
       </div>
     </div>
 
@@ -148,9 +172,14 @@
       </div>
       <img class="efecto_card_imagen" src="../../src/A.png">
       <div class="ef_desc"
-           data-es="Recuperas 5 PS. Sin límite de PS máximos."
-           data-en="You recover 5 HP. No maximum HP cap.">
-        Recuperas <strong>5 PS</strong>. Sin límite de PS máximos.
+           data-es="Recuperas 5 PS."
+           data-en="You recover 5 HP.">
+        Recuperas 5 PS.
+      </div>
+      <div class="ef_desc"
+           data-es="Sin límite de PS máximos."
+           data-en="No maximum HP cap.">
+        Sin límite de PS máximos.
       </div>
     </div>
 
@@ -206,7 +235,7 @@
 
             <div class="siguiente_proyecto_texto">
               <span class="siguiente_label" data-es="Siguiente proyecto" data-en="Next project">Siguiente proyecto</span>
-              <span class="siguiente_nombre">APPASEO</span>
+              <span class="siguiente_nombre">Appaseo</span>
               <!--<img class="siguiente_screenshot" src="../../src/appaseo_logo.png">-->
             </div>
             <img class="siguiente_arrow" src="../../src/Arrow_symbol_white_down.png">
@@ -218,9 +247,11 @@
 
   </div>
 
-  <footer>
-    <p>D M P</p>
-  </footer>
+	<footer>
+		<a href="../../" class="nav_back">
+        	<span class="dmp_texto">D M P</span>
+      	</a>
+	</footer>
 
   <!-- UNITY LOADER -->
   <script>
